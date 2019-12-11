@@ -12,7 +12,7 @@ require('./configs/session.config')(app)
 
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/players', require('./routes/players.routes'))
-
+app.use('/api/matchs', require('./routes/matchs.routes'))
 
 
 module.exports = app
