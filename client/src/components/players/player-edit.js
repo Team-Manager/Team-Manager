@@ -4,37 +4,54 @@ import { Button, Form } from 'react-bootstrap'
 import PlayersService from '../../service/Players.service'
 // import FilesService from '../../service/Files.service'
 
-class PlayersForm extends Component {
+class PlayersEdit extends Component {
     constructor(props) {
         super(props)
-        this._playersService = new PlayersService()
-        // this._filesService = new FilesService()
+        this._service = new PlayersService()
+        // // this._filesService = new FilesService()
         this.state = {
-            buttonText: 'Crear nuevo jugador',
+            buttonText: 'editar jugador',
+            // buttonText: 'eliminar jugador',
             player: {
-                name: '',
-                lastName: '',
-                nacionality: '',
-                age: '',
-                weight: '',
-                category: '',
-                position: '',
-                skills: '',
-                dominantLeg: ''
-                
+                name: this.props.player.name,
+                lastName: this.props.player.lastName,
+                nacionality: this.props.player.nacionality,
+                age: this.props.player.age,
+                weight: this.props.player.weight,
+                category: this.props.player.category,
+                position: this.props.player.position,
+                skills: this.props.player.skills,
+                dominantLeg: this.props.player.dominantLeg,
+
             }
         }
     }
+
+
+
     handleSubmit = e => {
         e.preventDefault()
-        this._playersService.postPlayers(this.state.player)
 
-            .then(x => {
+        this._service.PlayerEdit(this.state.player, this.props.player._id)
+            .then(theEditedPlayer => {
+                console.log(theEditedPlayer)
+                this.setState({ name: '', lastName: '', nacionality: '', age: '', weight: '', category: '', position: '', skills: '', dominantLeg: '' }, () => this.props.updatePlayersList(theEditedPlayer.data))
                 this.props.closeModalWindow()
-                this.props.updatePlayersList()
+                this.props.history.push('/player')
             })
-                .catch(err => console.log(err))
+
+
+            // .then(x => {
+            //     this.props.closeModalWindow()
+            //     this.props.updatePlayersList()
+            // })
+            .catch(err => console.log(err))
     }
+
+
+
+
+
 
     handleInputChange = e => {
         let { name, value } = e.target
@@ -42,25 +59,10 @@ class PlayersForm extends Component {
             player: { ...this.state.player, [name]: value }
         })
     }
-                                                                     //NO NECESARIO , NO TENEMOS IMAGEN!!!!!!!!!!!!!!!
-    // handleFileUpload = e => {
-    //     this.setState({ disabledButton: true, buttonText: 'Subiendo imagen...' })
-    //     const uploadData = new FormData()
-    //     uploadData.append("imageUrl", e.target.files[0])
-    //     this._filesService.handleUpload(uploadData)
-    //         .then(response => {
-    //             console.log('Subida de archivo finalizada! La URL de Cloudinray es: ', response.data.secure_url)
-    //             this.setState({
-    //                 disabledButton: false,
-    //                 buttonText: 'Crear montaña rusa',
-    //                 coaster: { ...this.state.coaster, imageUrl: response.data.secure_url }
-    //             })
-    //         })
-    //         .catch(err => console.log(err))
-    // }
+
     render() {
+        console.log(this.props)
         return (
-            // FORMULARIO PARA EL JUGADOR
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                     <Form.Label>Name</Form.Label>
@@ -98,9 +100,9 @@ class PlayersForm extends Component {
                 <Form.Group>
                     <Form.Label>pierna dominante</Form.Label>
                     <Form.Control as="select" type="text" name="dominantLeg" onChange={this.handleInputChange} value={this.state.player.dominantLeg} >
-                    <option>derecha</option>
-                    <option>izquierda</option>
-                    <option>ambas piernas</option>
+                        <option>derecha</option>
+                        <option>izquierda</option>
+                        <option>ambas piernas</option>
                     </Form.Control>
                 </Form.Group>
                 <Form.Group>
@@ -112,7 +114,7 @@ class PlayersForm extends Component {
         )
     }
 }
-export default PlayersForm
+export default PlayersEdit
 
 
 

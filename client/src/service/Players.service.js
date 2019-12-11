@@ -8,4 +8,13 @@ export default class Services {
     }
     getAllPlayers = () => this._service.get('/getAllPlayers')
     postPlayers = player => this._service.post('/new', player)
+
+    PlayerEdit = (player, playerID) => {
+        console.log(player)
+        return this._service.post('/edit', { player, playerID })
+    }
+    deletePlayer = (playerID) => {
+        console.log(playerID)
+        return this._service.get(`/delete/${playerID}`)
+    }
 }

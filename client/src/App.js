@@ -10,6 +10,7 @@ import Navbar from './components/ui/Navbar'
 import Index from './components/pages/Index'
 import PlayersList from './components/players/players-list'
 import PlayersForm from './components/players/players-form'
+import PlayerEdit from './components/players/player-edit'
 /* CUSTOM AUTH COMPONENTS */
 import Signup from './components/auth/Signup'
 import Login from './components/auth/Login'
@@ -60,6 +61,11 @@ class App extends Component {
             // this.state.loggedInUser && <Profile loggedInUser={this.state.loggedInUser} />
             this.state.loggedInUser ? <PlayersList loggedInUser={this.state.loggedInUser} /> : null
           } />
+          <Route path="/players" render={() =>
+            // this.state.loggedInUser && <Profile loggedInUser={this.state.loggedInUser} />
+            this.state.loggedInUser ? <PlayerEdit loggedInUser={this.state.loggedInUser} /> : null
+          }   />
+          
         </Switch>
 
       </>

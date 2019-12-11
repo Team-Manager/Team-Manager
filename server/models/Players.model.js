@@ -21,5 +21,6 @@ const playerSchema = new Schema({
     }
 });
 
+
 const Players = mongoose.model('Players', playerSchema);
 module.exports = Players;

@@ -5,6 +5,7 @@ import { Container, Row, Button, Modal } from 'react-bootstrap'
 
 import PlayersCard from './players-card'
 import PlayersForm from './players-form'
+import PlayersEdit from './player-edit'
 // import CoasterForm from './Coaster-form'
 
 
@@ -17,6 +18,14 @@ class PlayersList extends React.Component {
             // showModalWindow: false
         }
     }
+    deletePlayerHandler = id => {
+        
+            this._service.deletePlayer(id)
+            .then(player => console.log(player))
+            .catch(err => console.log("Error", err))
+             this.updatePlayersList()
+    }
+
     componentDidMount = () => this.updatePlayersList()
     updatePlayersList = () => {
         this._service.getAllPlayers()
@@ -30,14 +39,14 @@ class PlayersList extends React.Component {
             <section>
                 <Container>
                     <h1>aqui los players!!!</h1>
-                    
+
                     {
                         this.props.loggedInUser && <Button variant="dark" onClick={this.handleShow}>Nuevo jugador</Button>
-                        
+
                     }
                     <Row>
-                        {this.state.players.map(player => <PlayersCard key={player._id} {...player} />)}
-                        
+                        {this.state.players.map((player, idx) => <PlayersCard key={player._id} {...player} updatePlayersList={this.updatePlayersList} deletePlayer={this.deletePlayerHandler} />)}
+
                     </Row>
                 </Container>
                 <Modal show={this.state.showModalWindow} onHide={this.handleClose}>
@@ -48,7 +57,7 @@ class PlayersList extends React.Component {
                         <PlayersForm closeModalWindow={this.handleClose} updatePlayersList={this.updatePlayersList} />
                     </Modal.Body>
                 </Modal>
-                
+
             </section>
         )
     }
