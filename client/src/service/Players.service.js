@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 export default class Services {
     constructor() {
         this._service = axios.create({

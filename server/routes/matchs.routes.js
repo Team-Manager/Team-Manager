@@ -25,4 +25,20 @@ router.post('/new', (req, res) => {
         .catch(err => console.log('DB error', err))
 })
 
+router.post('/edit', (req, res) => {
+    const { goals, assists, rating, clasification, minutePlays} = req.body.match
+    Matchs.findByIdAndUpdate(req.body.matchID, { goals, assists, rating, clasification, minutePlays }, { new: true })
+        .then(match => {
+            
+            res.json(match)
+        })
+        .catch(err => console.log('error!!', err))
+})
+
+router.get("/delete/:id", (req, res) => {
+    Matchs.findByIdAndDelete(req.params.id)
+        .then(() => res.json({ message: 'delete ok' }))
+        .catch(err => console.log(err));
+});
+
 module.exports = router
