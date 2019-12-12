@@ -40,11 +40,6 @@ class PlayersEdit extends Component {
                 this.props.history.push('/player')
             })
 
-
-            // .then(x => {
-            //     this.props.closeModalWindow()
-            //     this.props.updatePlayersList()
-            // })
             .catch(err => console.log(err))
     }
 

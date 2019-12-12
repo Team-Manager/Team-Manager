@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col'
 import { Button, Form, Modal } from 'react-bootstrap'
 import PlayerEdit from '../players/player-edit'
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 class PlayersCard extends React.Component {
     constructor(props) {

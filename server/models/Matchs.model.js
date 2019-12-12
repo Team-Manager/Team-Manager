@@ -7,15 +7,8 @@ const matchSchema = new Schema({
     rating: Number,
     clasification: Number,
     minutePlays: Number,
-    imgName:{
-    type: String,
-    default: "/images/mathImages/default.jpg"
-},
-    imgPath: String,
     players: [{ type: Schema.Types.ObjectId, ref: 'players' }]
-
-
-
+  
 }, {
     timestamps: {
         createdAt: 'created_at',

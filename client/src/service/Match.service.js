@@ -11,4 +11,11 @@ export default class Services {
 
     getAllMatchs= () => this._service.get('/getAllMatchs')
     postMatchs = match => this._service.post('/new', match)
+
+    MatchEdit = (match, matchID) => {
+        return this._service.post('/edit', { match, matchID })
+    }
+    deleteMatch = (matchID) => {
+        return this._service.get(`/delete/${matchID}`)
+    }
 }
