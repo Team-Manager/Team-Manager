@@ -21,13 +21,13 @@ class MatchsCard extends React.Component {
     render() {
 
         return (
-            <Col className="match-card" md={3}>
+            <Col className="match-card" md={6}>
                 <p><small>Jugadores: </small>{this.props.category}</p>
                 <p><small>Goals: </small>{this.props.goals}</p>
-                <p><small>Asistencias: </small>{this.props.assists}</p>
-                <p><small>Rating: </small>{this.props.rating}</p>
                 <p><small>Clasificación: </small>{this.props.clasification}</p>
-                <p><small>Minutos jugados: </small>{this.props.minutePlays}</p>
+                <p><small>Partido: </small>{this.props.match}</p>
+                <p><small>Resultado: </small>{this.props.result}</p>
+                <p><small>Season: </small>{this.props.season}</p>
                 <br></br>
                 {/* boton editar jugador  */}
                 <Button variant="dark" onClick={this.handleShow}>Editar partido</Button>    

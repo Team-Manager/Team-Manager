@@ -1,0 +1,16 @@
+import axios from 'axios'
+
+export default class Services {
+    constructor() {
+        this._service = axios.create({
+            baseURL: 'http://localhost:5000/api/matchs/playersMatch',
+            withCredentials: true   // RUTAS PERSISTENTES
+        })
+    }
+    // getOneMatch = () => this._service.get('/getOneMatch')
+    getOneMatch = id => {
+        console.log(id)
+        return this._service.get(`/${id}`)
+    }
+
+}

@@ -14,6 +14,8 @@ import PlayerEdit from './components/players/player-edit'
 import MatchsList from './components/matchs/matchs-list'
 import MatchsForm from './components/matchs/matchs-form'
 import MatchsEdit from './components/matchs/match-edit'
+import PlayersMatch from "./components/matchs/players-match"
+import MatchPlayers from "./components/matchs/match-players"
 /* CUSTOM AUTH COMPONENTS */
 import Signup from './components/auth/Signup'
 import Login from './components/auth/Login'
@@ -56,19 +58,21 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Index} />
-         
+
 
           <Route path="/signup" render={match => <Signup setUser={this.setTheUser} {...match} />} />
           <Route path="/login" render={match => <Login setUser={this.setTheUser} {...match} />} />
           {/* RUTAS DE PLAYERS */}
-          <Route path="/form" component={PlayersForm} />
+          <Route exact path="/formPlayers" component={PlayersForm} />
           <Route path="/players" render={() => this.state.loggedInUser ? <PlayersList loggedInUser={this.state.loggedInUser} /> : null} />
-          <Route path="/players" render={() => this.state.loggedInUser ? <PlayerEdit loggedInUser={this.state.loggedInUser} /> : null} />
+
           {/* RUTAS DE PARTIDOS */}
-          <Route path="/form" component={MatchsForm} />
-          <Route path="/match" render={() => this.state.loggedInUser ? <MatchsList loggedInUser={this.state.loggedInUser} /> : null} />
-          <Route path="/match" render={() => this.state.loggedInUser ? <MatchsEdit loggedInUser={this.state.loggedInUser} /> : null} />
-          
+          <Route exact path="/formMatchs" component={MatchsForm} />
+          <Route path="/match" render={match => this.state.loggedInUser ? <MatchsList {...match} loggedInUser={this.state.loggedInUser} /> : null} />
+          <Route path="/playersMatch/:id" render={match => this.state.loggedInUser ? <PlayersMatch {...match} loggedInUser={this.state.loggedInUser} /> : null} />
+          <Route path="/matchPlayers/:id" render={match => this.state.loggedInUser ? <MatchPlayers {...match} loggedInUser={this.state.loggedInUser} /> : null} />
+
+
         </Switch>
 
       </>

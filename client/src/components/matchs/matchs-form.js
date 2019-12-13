@@ -11,10 +11,10 @@ class MatchsForm extends Component {
             buttonText: 'Crear nuevo partido',
             match: {
                 goals: '',
-                assists: '',
-                rating: '',
-                clasification: '',
-                minutePlays: '',
+                clasification: '', 
+                match: '',
+                result: '',
+                season: '',
                 players: []
 
             }
@@ -25,8 +25,11 @@ class MatchsForm extends Component {
         this._matchsService.postMatchs(this.state.match)
 
             .then(x => {
+                console.log(x.data)
+                const matchID = x.data._id
                 this.props.closeModalWindow()
                 this.props.updateMatchsList()
+                this.props.match.push(`/playersMatch/${matchID}`)
             })
             .catch(err => console.log(err))
     }
@@ -54,6 +57,7 @@ class MatchsForm extends Component {
     //         .catch(err => console.log(err))
     // }
     render() {
+
         return (
             // FORMULARIO PARA EL JUGADOR
             <Form onSubmit={this.handleSubmit}>
@@ -61,31 +65,25 @@ class MatchsForm extends Component {
                     <Form.Label>Goles</Form.Label>
                     <Form.Control type="number" name="goals" onChange={this.handleInputChange} value={this.state.match.goals} />
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Asistencias</Form.Label>
-                    <Form.Control type="number" name="assists" onChange={this.handleInputChange} value={this.state.match.assists} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Puntuación</Form.Label>
-                    <Form.Control type="number" name="rating" onChange={this.handleInputChange} value={this.state.match.rating} />
-                </Form.Group>
+            
                 <Form.Group>
                     <Form.Label>Clasificación</Form.Label>
                     <Form.Control type="number" name="clasification" onChange={this.handleInputChange} value={this.state.match.clasification} />
                 </Form.Group>
+               
                 <Form.Group>
-                    <Form.Label>Minutos Jugados</Form.Label>
-                    <Form.Control type="number" name="minutePlays" onChange={this.handleInputChange} value={this.state.match.minutePlays} />
+                    <Form.Label>Partido</Form.Label>
+                    <Form.Control type="text" name="match" onChange={this.handleInputChange} value={this.state.match.match} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Jugadores</Form.Label>
-                    <Form.Control as="select" type="text" name="category" onChange={this.handleInputChange} value={this.state.match.players}>
-                        <option>Alevin</option>
-                        <option>Infantil</option>
-                        <option>Cadete</option>
-                        <option>Juvenil</option>
-                    </Form.Control>
+                    <Form.Label>Resultado</Form.Label>
+                    <Form.Control type="number" name="result" onChange={this.handleInputChange} value={this.state.match.result} />
                 </Form.Group>
+                <Form.Group>
+                    <Form.Label>Temporada</Form.Label>
+                    <Form.Control type="number" name="season" onChange={this.handleInputChange} value={this.state.match.season} />
+                </Form.Group>
+                
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
             </Form>
         )

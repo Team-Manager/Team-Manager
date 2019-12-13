@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const matchSchema = new Schema({
     goals: Number,
-    assists: Number,
-    rating: Number,
     clasification: Number,
-    minutePlays: Number,
-    players: [{ type: Schema.Types.ObjectId, ref: 'players' }]
-  
+    match: String,
+    result: Number,
+    season: Number,
+    players: [{ type: Schema.Types.ObjectId, ref: 'Players' }]
+
 }, {
     timestamps: {
         createdAt: 'created_at',

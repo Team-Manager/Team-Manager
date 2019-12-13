@@ -1,6 +1,8 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
 
+import {Link} from 'react-router-dom'
+
 const Index = () => {
 
     return (
@@ -8,7 +10,9 @@ const Index = () => {
             <section>
                 <h1>Manager App!</h1>
                 <p>la app preferida de los entrenadores de futbol</p>
-                <button type="submit">Día de Partido</button>
+                {/* <button type="submit">Día de Partido</button> */}
+                <Link className="btn btn-sm btn-dark" to="/match">Día De Partido</Link>
+
             </section>
         </Container>
        

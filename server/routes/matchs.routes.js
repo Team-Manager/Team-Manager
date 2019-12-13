@@ -26,12 +26,9 @@ router.post('/new', (req, res) => {
 })
 
 router.post('/edit', (req, res) => {
-    const { goals, assists, rating, clasification, minutePlays} = req.body.match
-    Matchs.findByIdAndUpdate(req.body.matchID, { goals, assists, rating, clasification, minutePlays }, { new: true })
-        .then(match => {
-            
-            res.json(match)
-        })
+    const { goals, clasification, match, result, season } = req.body.match
+    Matchs.findByIdAndUpdate(req.body.matchID, { goals, clasification, match, result, season }, { new: true })
+        .then(match => { res.json(match) })
         .catch(err => console.log('error!!', err))
 })
 
@@ -40,5 +37,17 @@ router.get("/delete/:id", (req, res) => {
         .then(() => res.json({ message: 'delete ok' }))
         .catch(err => console.log(err));
 });
+
+router.get("/playersMatch/:id", (req, res) => {
+    console.log(req.params)
+    Matchs.findById(req.params.id)
+        .then(match => {
+            console.log(match)
+            res.json(match)
+        })
+        .catch(err => console.log(err));
+});
+
+
 
 module.exports = router
