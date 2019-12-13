@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
-
+import Calendar from "../calendar/calendar"
 const Index = () => {
 
     return (
@@ -10,10 +10,11 @@ const Index = () => {
                 <p>la app preferida de los entrenadores de futbol</p>
                 <button type="submit">Día de Partido</button>
             </section>
+            <Calendar></Calendar>
         </Container>
-       
+
     )
-    
+
 }
 
 
