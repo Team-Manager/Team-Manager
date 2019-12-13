@@ -41,6 +41,7 @@ class PlayersCard extends React.Component {
             <Col className="player-card" md={3}>
                 <p><small>Nombre: </small>{this.props.name}</p>
                 <p><small>Apellido: </small>{this.props.lastName}</p>
+                <p><small>Número: </small>{this.props.number}</p>
                 <p><small>Nacionalidad: </small>{this.props.nacionality}</p>
                 <p><small>Edad: </small>{this.props.age}</p>
                 <p><small>Peso: </small>{this.props.weight}<small>Kg</small></p>
@@ -48,6 +49,11 @@ class PlayersCard extends React.Component {
                 <p><small>Posición: </small>{this.props.position}</p>
                 <p><small>Pierna Dominante: </small>{this.props.dominantLeg}</p>
                 <p><small>Habilidades Técnicas: </small>{this.props.skills}</p>
+                <p><small>goles:</small>{this.props.goals}</p>
+                <p><small>asistencias:</small>{this.props.assists}</p>
+                <p><small>tarjetas:</small>{this.props.cards}</p>
+                <p><small>minutos jugados:</small>{this.props.minutePlays}</p>
+                <p><small>puntuación del partido:</small>{this.props.rating}</p>
                 <br></br>
                 {/* boton editar jugador  */}
                 <Button variant="dark" onClick={this.handleShow}>Editar jugador</Button>

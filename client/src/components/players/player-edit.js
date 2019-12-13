@@ -11,10 +11,11 @@ class PlayersEdit extends Component {
         // // this._filesService = new FilesService()
         this.state = {
             buttonText: 'editar jugador',
-            // buttonText: 'eliminar jugador',
+        
             player: {
                 name: this.props.player.name,
                 lastName: this.props.player.lastName,
+                number: this.props.player.number,
                 nacionality: this.props.player.nacionality,
                 age: this.props.player.age,
                 weight: this.props.player.weight,
@@ -35,7 +36,7 @@ class PlayersEdit extends Component {
         this._service.PlayerEdit(this.state.player, this.props.player._id)
             .then(theEditedPlayer => {
                 console.log(theEditedPlayer)
-                this.setState({ name: '', lastName: '', nacionality: '', age: '', weight: '', category: '', position: '', skills: '', dominantLeg: '' }, () => this.props.updatePlayersList(theEditedPlayer.data))
+                this.setState({ name: '', lastName: '', number: '', nacionality: '', age: '', weight: '', category: '', position: '', skills: '', dominantLeg: '', goals: '', assists: '', cards: '', minutePlays: '', rating: ''}, () => this.props.updatePlayersList(theEditedPlayer.data))
                 this.props.closeModalWindow()
                 this.props.history.push('/player')
             })
@@ -66,6 +67,10 @@ class PlayersEdit extends Component {
                 <Form.Group>
                     <Form.Label>last Name</Form.Label>
                     <Form.Control type="text" name="lastName" onChange={this.handleInputChange} value={this.state.player.lastName} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Número</Form.Label>
+                    <Form.Control type="number" name="number" onChange={this.handleInputChange} value={this.state.player.number} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Nacionality</Form.Label>
@@ -103,6 +108,26 @@ class PlayersEdit extends Component {
                 <Form.Group>
                     <Form.Label>Skills</Form.Label>
                     <Form.Control type="text" name="skills" onChange={this.handleInputChange} value={this.state.player.skills} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Goles</Form.Label>
+                    <Form.Control type="number" name="goals" onChange={this.handleInputChange} value={this.state.player.goals} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Asistencias</Form.Label>
+                    <Form.Control type="number" name="assists" onChange={this.handleInputChange} value={this.state.player.assists} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Amonestaciones</Form.Label>
+                    <Form.Control type="text" name="cards" onChange={this.handleInputChange} value={this.state.player.cards} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Minutos Jugados</Form.Label>
+                    <Form.Control type="number" name="minutePlays" onChange={this.handleInputChange} value={this.state.player.minutePlays} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Puntuacion</Form.Label>
+                    <Form.Control type="number" name="rating" onChange={this.handleInputChange} value={this.state.player.rating} />
                 </Form.Group>
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
             </Form>

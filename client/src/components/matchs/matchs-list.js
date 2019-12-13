@@ -3,9 +3,9 @@ import Service from '../../service/Match.service'
 
 import { Container, Row, Button, Modal } from 'react-bootstrap'
 
-import MatchsCard from './matchs-card'     
-import MatchsForm from './matchs-form'    
-import MatchsEdit from './match-edit'        
+import MatchsCard from './matchs-card'
+import MatchsForm from './matchs-form'
+import MatchsEdit from './match-edit'
 
 
 class MatchsList extends React.Component {
@@ -20,7 +20,7 @@ class MatchsList extends React.Component {
     deleteMatchHandler = id => {
 
         this._service.deleteMatch(id)
-            .then(match => console.log(match))                          
+            .then(match => console.log(match))
             .catch(err => console.log("Error", err))
         this.updateMatchsList()
     }
@@ -34,6 +34,7 @@ class MatchsList extends React.Component {
     handleShow = () => this.setState({ showModalWindow: true })
     handleClose = () => this.setState({ showModalWindow: false })
     render() {
+
         return (
             <section>
                 <Container>
@@ -48,12 +49,12 @@ class MatchsList extends React.Component {
 
                     </Row>
                 </Container>
-                <Modal show={this.state.showModalWindow} onHide={this.handleClose}>
+                    <Modal show={this.state.showModalWindow} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Nuevo partido</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <MatchsForm closeModalWindow={this.handleClose} updateMatchsList={this.updateMatchsList} />
+                        <MatchsForm match={this.props.history} closeModalWindow={this.handleClose} updateMatchsList={this.updateMatchsList} />
                     </Modal.Body>
                 </Modal>
 

@@ -4,14 +4,20 @@ const Schema = mongoose.Schema;
 const playerSchema = new Schema({
     name: String,
     lastName: String,
+    number: Number,
     nacionality: String,
     age: Number,
     weight: Number,
     category: String,
     position: String,
     skills: String,
-    dominantLeg: String
-       
+    dominantLeg: String,
+    goals: Number,
+    assists: Number,
+    cards: String,
+    minutePlays: Number,
+    rating: Number,
+    matchs: [{ type: Schema.Types.ObjectId, ref: 'Matchs' }]
     
 
 }, {

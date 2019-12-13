@@ -14,13 +14,18 @@ class PlayersForm extends Component {
             player: {
                 name: '',
                 lastName: '',
+                number: '',
                 nacionality: '',
                 age: '',
                 weight: '',
                 category: '',
                 position: '',
                 skills: '',
-                dominantLeg: ''
+                dominantLeg: '',
+                goals: '',
+                assists: '',
+                cards: '',
+                rating: ''
                 
             }
         }
@@ -30,8 +35,11 @@ class PlayersForm extends Component {
         this._playersService.postPlayers(this.state.player)
 
             .then(x => {
+                const playersID = x.data._id
                 this.props.closeModalWindow()
                 this.props.updatePlayersList()
+                this.props.player.push(`/getAllPlayers${playersID}`)
+
             })
                 .catch(err => console.log(err))
     }
@@ -71,6 +79,10 @@ class PlayersForm extends Component {
                     <Form.Control type="text" name="lastName" onChange={this.handleInputChange} value={this.state.player.lastName} />
                 </Form.Group>
                 <Form.Group>
+                    <Form.Label>Número</Form.Label>
+                    <Form.Control type="number" name="number" onChange={this.handleInputChange} value={this.state.player.number} />
+                </Form.Group>
+                <Form.Group>
                     <Form.Label>Nacionality</Form.Label>
                     <Form.Control type="text" name="nacionality" onChange={this.handleInputChange} value={this.state.player.nacionality} />
                 </Form.Group>
@@ -106,6 +118,26 @@ class PlayersForm extends Component {
                 <Form.Group>
                     <Form.Label>Skills</Form.Label>
                     <Form.Control type="text" name="skills" onChange={this.handleInputChange} value={this.state.player.skills} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Goles</Form.Label>
+                    <Form.Control type="number" name="goals" onChange={this.handleInputChange} value={this.state.player.goals} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Asistencias</Form.Label>
+                    <Form.Control type="number" name="assists" onChange={this.handleInputChange} value={this.state.player.assists} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Amonestaciones</Form.Label>
+                    <Form.Control type="text" name="cards" onChange={this.handleInputChange} value={this.state.player.cards} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Minutos Jugados</Form.Label>
+                    <Form.Control type="number" name="minutePlays" onChange={this.handleInputChange} value={this.state.player.minutePlays} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Puntuacion</Form.Label>
+                    <Form.Control type="number" name="rating" onChange={this.handleInputChange} value={this.state.player.rating} />
                 </Form.Group>
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
             </Form>

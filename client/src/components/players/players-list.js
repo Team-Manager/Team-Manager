@@ -5,8 +5,7 @@ import { Container, Row, Button, Modal } from 'react-bootstrap'
 
 import PlayersCard from './players-card'
 import PlayersForm from './players-form'
-import PlayersEdit from './player-edit'
-// import CoasterForm from './Coaster-form'
+// import PlayersEdit from './player-edit'
 
 
 class PlayersList extends React.Component {
