@@ -17,6 +17,7 @@ const playerSchema = new Schema({
     cards: String,
     minutePlays: Number,
     rating: Number,
+    titular:Boolean,
     matchs: [{ type: Schema.Types.ObjectId, ref: 'Matchs' }]
     
 

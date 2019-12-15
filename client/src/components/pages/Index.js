@@ -1,7 +1,6 @@
 import React from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row , } from 'react-bootstrap'
 import Calendar from "../calendar/calendar"
-
 import { Link } from 'react-router-dom'
 
 const Index = () => {
