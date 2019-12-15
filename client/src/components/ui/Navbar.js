@@ -26,7 +26,16 @@ class Navigation extends Component {
             this.props.loggedInUser ?
 
                 <Navbar bg="dark" variant="dark" expand="md">
-                    <Navbar.Brand>Team Manager!</Navbar.Brand>
+                    <Navbar.Brand href="/">
+                        <img
+                            src="./images/futbol.png"
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                            alt="React Bootstrap logo"
+                        />
+                    </Navbar.Brand>
+                    
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse>
                         <Nav className="mr-auto">
@@ -44,19 +53,31 @@ class Navigation extends Component {
                 :
 
                 <Navbar bg="dark" variant="dark" expand="md">
-                    <Navbar.Brand>Team Manager!</Navbar.Brand>
+                    <Navbar.Brand href="/">
+                        <img
+                            src="./images/futbol.png"
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                            alt="React Bootstrap logo"
+                        />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse>
                         <Nav className="mr-auto">
+                           
                             <Nav.Link as="li"><Link to="/">Inicio</Link></Nav.Link>
                             <Nav.Link as="li"><Link to="/signup">Registro</Link></Nav.Link>
                             <Nav.Link as="li"><Link to="/login">Login</Link></Nav.Link>
+                            
                         </Nav>
                         <Nav className="ml-auto">
                             <Navbar.Text>Bienvenid@ entrenad@r {saludo}</Navbar.Text>
                         </Nav>
                     </Navbar.Collapse>
+                    
                 </Navbar>
+                
         )
     }
 }

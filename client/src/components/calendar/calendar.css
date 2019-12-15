@@ -14,11 +14,11 @@ div{
   height:100vh;
 }
 .calendar{
-  margin:auto;
-  width:600px;
-  height:400px;
+  margin:90px;
+  margin-left: 40px;
+  height:553px;
   background-color:#fff;
- box-shadow:0px 0px 15px 3px rgba(0,0,0.2)
+ box-shadow:0px 0px 15px 3px rgba(0,0,0.2);
 }
 .month{
   border: 1px solid #bbb;
@@ -36,7 +36,7 @@ div{
   display:flex;
   background-color:#33FFC7;
   color:#fff;
-  padding:7px 0;
+  padding:10px 0;
 }
 .weekends div{
   width:13.28%;
@@ -47,15 +47,16 @@ div{
   display:flex;
   flex-wrap:wrap;
   text-align:center;
-  font-weight:300;
-  padding:10px 0;
+  font-weight:600;
+  padding:70px 0;
   transition :all 0.4s;
+  
 }
 .days div{
  
-  width: 12.28%;
+  width: 25.28%;
   margin-bottom:10px;
-  padding: 4px;
+  padding: 7px;
 }
 .weekends div,
 .days div{

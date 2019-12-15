@@ -30,9 +30,11 @@ export default class Calendar extends Component {
     componentDidMount() {
         this.renderDate()
      //invocar el metodo creado.
+        // this._service.get('/getAllPlayers')
     }
     // MEtodo para traer de la base de datos todos los partidos. 
     //Get All players
+    getAllPlayers = () => this._service.get('/getAllPlayers')
 
     renderDate = () => {
         this.dt.setDate(1);

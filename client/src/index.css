@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h3{
+  text-align: center;
+}
+.prueba{
+ 
+
+}
+
+
+.prueba3{
+  height: 100%;
+  width: 100%;
+ 
+}
+.prueba4{
+ height: 100%;
+  width: 100%;
+ 
+}
+.footer{
+  z-index: 2;
+    width: 100%;
+    background: #283747;
+    color: #fff;
+    text-align: center;
+    font-size: .8em;
+    font-weight: 300;
+    padding: 10px 30px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #222;
+    clear: both;
+}
+
+.img5{
+  width: 400px;
+  height: 400px;
+}
