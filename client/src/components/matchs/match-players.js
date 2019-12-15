@@ -1,83 +1,54 @@
-// import React, { Component } from 'react'
-// import playersService from '../../service/Players.service'
-// import PlayersList from '../players/players-list'
-// import { Container, Row} from 'react-bootstrap'
-// import PlayersCard from '../players/players-card'
+import React, { Component } from 'react'
+import { Container, Row, Col, Form} from 'react-bootstrap'
 
 
-//                                          //EDITAR ESTA PARTE
+//EDITAR ESTA PARTE
+
+class MatchPlayers extends Component {
+    constructor(props) {
+        super(props)
 
 
-
-// class MatchPlayers extends Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             players:[]
-//         }
-//         this._playersService = new playersService()
-        
-
-
-//     }
-
-//     componentDidMount = () => {
-//            this.updatePlayersList()
-//     }
-    
-//     // updatePlayersList = () => {
-//     //      const MatchPlayersId = this.props.match.params.id
-//     //     this._MatchPlayersService.getAllPlayers(MatchPlayersId)
-//     //         .then(allPlayersFromDB => this.setState({ MatchPlayers: allPlayersFromDB.data }))
-//     //         .catch(err => console.log("Error", err))
-
-//     //     }
-//         render() {
-//             return (
-//                 <div>
-//                  <>
-//                         <PlayersList />
-                        
-
-
-//                         <Container>
-//                             <h1>aqui los players!!!</h1>
 
         
-//                             <Row>
-//                                 {this.state.players.map((player, idx) => <PlayersCard key={player._id} {...player} updatePlayersList={this.updatePlayersList} deletePlayer={this.deletePlayerHandler} />)}
 
-//                             </Row>
+    }
 
-//                         </Container>
-//                         {/* {this.state.players ?
-//                             this.state.players.map(player =>
-//                                 <p>{player.name}</p>
 
-//                             ) :
-//                             null}  */}
-                            
-//                     {/* NO OLVIDES PREGUNTAR A RALUCA POR LA LINEA 28 Y SI DEBO CREAR UN NUEVO CARD PARA EL PLAYER */}
+    render() {
+        console.log(this.props)
+        return (
 
-//                     {/* <PlayerList player={this.props} updatePlayersList={this.props.updatePlayersList} />     */}
+            
+
+               <Col className="PlayerCard" md={3} >
                 
-//                 {/* <article>
-//                     <h4>Mis Jugadores</h4>
-//                     <p>name: {name} </p>
-//                     <p>apellido: {lastName}</p>
-//                     <p>posicion:{position}</p>
-//                     <p>goles:{goals}</p>
-//                     <p>asistencias: {assists}</p>
-//                     <p>amonestaciones: {amonestaciones}</p>
-//                     <p>minutos jugados: {minutePlays}</p>
+                                  <p><strong>Nombre: </strong>{this.props.name}</p>
+                                  <p><strong>Apellido:</strong>{this.props.lastName}</p>
+                                  <p><strong>Goles: </strong> {this.props.goals}</p>
+                                  <p><strong>Asistencias: </strong> {this.props.assists}</p>
+                                  <p><strong>Asistencias: </strong> {this.props.assists}</p>
+                                  <p><strong>Minutos Jugados: </strong> {this.props.minutePlays}</p>
+                                  <p><strong>Tarjetas: </strong> {this.props.cards}</p>
+                                  <p><strong>Puntuación: </strong> {this.props.rating}</p>
+                <div>
+                    {/* <InputGroup className="mb-3">
+                        <p><strong>Añadir al partido: </strong></p>
+                        <InputGroup.Checkbox aria-label={this.props.titular} /> */}
+                        
+                        <Form.Group controlId="formBasicCheckbox">
+                            <Form.Check type="checkbox" label="titular" />
+                        </Form.Group>
+                    
+            
+                    </div>
+                                 
+                </Col>
+            
+        )
+    }
 
-//                 </article> */}
-//                </>
-//                 </div>
-//             )
-//         }
-    
-// }    
+}
 
-// export default MatchPlayers
+export default MatchPlayers
 

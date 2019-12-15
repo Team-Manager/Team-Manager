@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+ .PlayerCard{
+   display: inline-block;
+  margin:10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  justify-content: space-between;
+  opacity: 0.9;
+  background: #F1FBF8;
+  font-size: 15px;
+  padding: 20px;
+  margin-left: 5%;
+}
+
+
+.MatchCard{
+     border-radius: 10px;
+    border: 1px solid grey;
+    margin: 15px;
+    padding: 30px;
+
+}
+

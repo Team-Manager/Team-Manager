@@ -36,7 +36,7 @@ class PlayersEdit extends Component {
         this._service.PlayerEdit(this.state.player, this.props.player._id)
             .then(theEditedPlayer => {
                 console.log(theEditedPlayer)
-                this.setState({ name: '', lastName: '', number: '', nacionality: '', age: '', weight: '', category: '', position: '', skills: '', dominantLeg: '', goals: '', assists: '', cards: '', minutePlays: '', rating: ''}, () => this.props.updatePlayersList(theEditedPlayer.data))
+                this.setState({ name: '', lastName: '', number: '', nacionality: '', age: '', weight: '', category: '', position: '', skills: '', dominantLeg: ''}, () => this.props.updatePlayersList(theEditedPlayer.data))
                 this.props.closeModalWindow()
                 this.props.history.push('/player')
             })
@@ -59,6 +59,7 @@ class PlayersEdit extends Component {
     render() {
         console.log(this.props)
         return (
+
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                     <Form.Label>Name</Form.Label>
@@ -109,29 +110,13 @@ class PlayersEdit extends Component {
                     <Form.Label>Skills</Form.Label>
                     <Form.Control type="text" name="skills" onChange={this.handleInputChange} value={this.state.player.skills} />
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Goles</Form.Label>
-                    <Form.Control type="number" name="goals" onChange={this.handleInputChange} value={this.state.player.goals} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Asistencias</Form.Label>
-                    <Form.Control type="number" name="assists" onChange={this.handleInputChange} value={this.state.player.assists} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Amonestaciones</Form.Label>
-                    <Form.Control type="text" name="cards" onChange={this.handleInputChange} value={this.state.player.cards} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Minutos Jugados</Form.Label>
-                    <Form.Control type="number" name="minutePlays" onChange={this.handleInputChange} value={this.state.player.minutePlays} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Puntuacion</Form.Label>
-                    <Form.Control type="number" name="rating" onChange={this.handleInputChange} value={this.state.player.rating} />
-                </Form.Group>
+               
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
-            </Form>
+                
+                </Form>
+                
         )
+        
     }
 }
 export default PlayersEdit

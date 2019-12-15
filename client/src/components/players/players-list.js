@@ -34,20 +34,24 @@ class PlayersList extends React.Component {
     handleShow = () => this.setState({ showModalWindow: true })
     handleClose = () => this.setState({ showModalWindow: false })
     render() {
+     
         return (
             <section>
-                <Container>
+                <Container >
+                      
+               
+                   
                     <h1>aqui los players!!!</h1>
-
+                    
+                    
                     {
                         this.props.loggedInUser && <Button variant="dark" onClick={this.handleShow}>Nuevo jugador</Button>
 
                     }
-                    <Row>
+                    <Row >
                         {this.state.players.map((player, idx) => <PlayersCard key={player._id} {...player} updatePlayersList={this.updatePlayersList} deletePlayer={this.deletePlayerHandler} />)}
-
-                    </Row>
-                </Container>
+                        </Row>
+                    </Container>
                 <Modal show={this.state.showModalWindow} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Nuevo jugador</Modal.Title>
@@ -56,7 +60,7 @@ class PlayersList extends React.Component {
                         <PlayersForm closeModalWindow={this.handleClose} updatePlayersList={this.updatePlayersList} />
                     </Modal.Body>
                 </Modal>
-
+                         
             </section>
         )
     }

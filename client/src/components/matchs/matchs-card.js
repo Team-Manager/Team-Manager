@@ -21,19 +21,18 @@ class MatchsCard extends React.Component {
     render() {
 
         return (
-            <Col className="match-card" md={6}>
-                <p><small>Jugadores: </small>{this.props.category}</p>
-                <p><small>Goals: </small>{this.props.goals}</p>
-                <p><small>Clasificación: </small>{this.props.clasification}</p>
-                <p><small>Partido: </small>{this.props.match}</p>
-                <p><small>Resultado: </small>{this.props.result}</p>
-                <p><small>Season: </small>{this.props.season}</p>
+            <Col className="match-card">
+                <p>Jugadores: {this.props.category}</p>
+                <p>Goals: {this.props.goals}</p>
+                <p>Clasificación: {this.props.clasification}</p>
+                <p>Partido: {this.props.match}</p>
+                <p>Resultado: {this.props.result}</p>
+                <p>Season: {this.props.season}</p>
                 <br></br>
-                {/* boton editar jugador  */}
-                <Button variant="dark" onClick={this.handleShow}>Editar partido</Button>    
-                {/* boton borrar jugador */}
-                <Button variant="dark" onClick={() => this.props.deleteMatch(this.props._id)}>Eliminar partido</Button>
-
+                <div className="Buttons">
+                <Button className="ButtonsPl" variant="dark" onClick={this.handleShow}>Editar partido</Button>    
+                <Button className="ButtonsPl" variant="dark" onClick={() => this.props.deleteMatch(this.props._id)}>Eliminar partido</Button>
+                </div>
                
 
                 <Modal show={this.state.showModalWindow} onHide={this.handleClose}>

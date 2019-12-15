@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ .PlayerCard{
+   display: inline-block;
+  margin:10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  justify-content: space-between;
+  opacity: 0.9;
+  background: #F1FBF8;
+  font-size: 15px;
+  padding: 20px;
+  margin-left: 5%;
+}
+Col{
+
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid grey;
+  opacity: 0.9;
+  background: #F1FBF8;
+  font-size: 15px;
+  margin-left: 5%;
+
+}
+.Buttons{
+display: flex;
+margin:3%;
+}
+.ButtonsPl{
+  margin:3%;
+}
+
+.match-card{
+   white-space: nowrap;
+  border-radius: 10px;
+  border: 1px solid grey;
+  opacity: 0.9;
+  background: #F1FBF8;
+  font-size: 15px;
+  margin: 2px;
+}

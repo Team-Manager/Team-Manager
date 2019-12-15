@@ -13,15 +13,13 @@ class MatchsEdit extends Component {
             buttonText: 'editar partido',
             // buttonText: 'eliminar jugador',
             match: {
-                // soccer: this.props.match.soccer,
-                // result: this.props.match.result,
-                // workingDay: this.props.match.workingDay,
+               
                 goals: this.props.match.goals,
                 clasification: this.props.match.clasification,
                 match: this.props.match.match,
                 result: this.props.match.result,
                 season: this.props.match.season,
-                // players: this.props.match.players,
+              
                
 
             }
@@ -35,6 +33,7 @@ class MatchsEdit extends Component {
 
         this._service.MatchEdit(this.state.match, this.props.match._id)
             .then(theEditedMatch => {
+                console.log(theEditedMatch.data )
                 this.setState({ goals: '', clasification: '', match: '', result: '', season: '' }, () => this.props.updateMatchsList(theEditedMatch.data))
                 this.props.closeModalWindow()
                 this.props.history.push('/match')
@@ -79,18 +78,6 @@ class MatchsEdit extends Component {
                     <Form.Label>Temporada</Form.Label>
                     <Form.Control type="number" name="season" onChange={this.handleInputChange} value={this.state.match.season} />
                 </Form.Group>
-                {/* <Form.Group>
-                    <Form.Label>Partido</Form.Label>
-                    <Form.Control type="string" name="soccer" onChange={this.handleInputChange} value={this.state.match.soccer} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Clasificación</Form.Label>
-                    <Form.Control type="number" name="clasification" onChange={this.handleInputChange} value={this.state.match.clasification} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Minutos Jugados</Form.Label>
-                    <Form.Control type="number" name="minutePlays" onChange={this.handleInputChange} value={this.state.match.minutePlays} />
-                </Form.Group> */}
               
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
             </Form>

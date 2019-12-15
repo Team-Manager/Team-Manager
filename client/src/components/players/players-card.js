@@ -1,9 +1,10 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col'
-import { Button, Form, Modal } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 import PlayerEdit from '../players/player-edit'
-
 // import { Link } from 'react-router-dom'
+
+
 
 class PlayersCard extends React.Component {
     constructor(props) {
@@ -11,55 +12,36 @@ class PlayersCard extends React.Component {
 
         this.state = {
             showModalWindow: false
-
+            
         }
     }
-    // handleSubmit = e => {
-    //     e.preventDefault()
-    //     this._playersService.postPlayers(this.state.player)
-
-    //         .then(x => {
-    //             this.props.closeModalWindow()
-    //             this.props.updatePlayersList()
-    //         })
-    //         .catch(err => console.log(err))
-    // }
-
-    // handleInputChange = e => {
-    //     let { name, value } = e.target
-    //     this.setState({
-    //         player: { ...this.state.player, [name]: value }
-    //     })
-    // }
-
+    
     handleShow = () => this.setState({ showModalWindow: true })
     handleClose = () => this.setState({ showModalWindow: false })
     render() {
         console.log(this.state)
-
+        
         return (
-            <Col className="player-card" md={3}>
-                <p><small>Nombre: </small>{this.props.name}</p>
-                <p><small>Apellido: </small>{this.props.lastName}</p>
-                <p><small>Número: </small>{this.props.number}</p>
-                <p><small>Nacionalidad: </small>{this.props.nacionality}</p>
-                <p><small>Edad: </small>{this.props.age}</p>
-                <p><small>Peso: </small>{this.props.weight}<small>Kg</small></p>
-                <p><small>Categoría: </small>{this.props.category}</p>
-                <p><small>Posición: </small>{this.props.position}</p>
-                <p><small>Pierna Dominante: </small>{this.props.dominantLeg}</p>
-                <p><small>Habilidades Técnicas: </small>{this.props.skills}</p>
-                <p><small>goles:</small>{this.props.goals}</p>
-                <p><small>asistencias:</small>{this.props.assists}</p>
-                <p><small>tarjetas:</small>{this.props.cards}</p>
-                <p><small>minutos jugados:</small>{this.props.minutePlays}</p>
-                <p><small>puntuación del partido:</small>{this.props.rating}</p>
+                        
+                <Col className="PlayerCard" md={3}>
+                
+                <p>Nombre: {this.props.name}</p>
+                <p>Apellido: {this.props.lastName}</p>
+                <p>Número: {this.props.number}</p>
+                <p>Nacionalidad: {this.props.nacionality}</p>
+                <p>Edad: {this.props.age}</p>
+                <p>Peso: {this.props.weight}<small>Kg</small></p>
+                <p>Categoría: {this.props.category}</p>
+                <p>Posición: {this.props.position}</p>
+                <p>Pierna Dominante: {this.props.dominantLeg}</p>
+                <p>Habilidades Técnicas: {this.props.skills}</p>
+                
                 <br></br>
-                {/* boton editar jugador  */}
-                <Button variant="dark" onClick={this.handleShow}>Editar jugador</Button>
-                {/* boton borrar jugador */}
-                <Button variant="dark" onClick={() => this.props.deletePlayer(this.props._id)}>Eliminar jugador</Button>
-
+                <div className="Buttons">
+                    <Button className="ButtonsPl" variant="dark" onClick={this.handleShow}>Editar jugador</Button>
+                    <Button className="ButtonsPl" variant="dark" onClick={() => this.props.deletePlayer(this.props._id)}>Eliminar jugador</Button>
+                </div>
+               
                 {/* <Link className="btn btn-sm btn-dark" to={`/players/${_id }`}>Ver detalles</Link> */}
                 {/* <PlayerEdit player={props}></PlayerEdit> */}
 
@@ -71,11 +53,12 @@ class PlayersCard extends React.Component {
                         <PlayerEdit player={this.props} updatePlayersList={this.props.updatePlayersList} closeModalWindow={this.handleClose} />
                         {/* <deletePlayerplayer={this.props} updatePlayersList={this.props.updatePlayersList} closeModalWindow={this.handleClose} /> */}
                     </Modal.Body>
-                </Modal>
-
-
+                    </Modal>
+                    
 
             </Col>
+
+            
 
         )
     }

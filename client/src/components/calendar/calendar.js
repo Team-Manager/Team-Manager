@@ -24,7 +24,6 @@ export default class Calendar extends Component {
         this.daysOfweek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 
 
-
     }
 
     componentDidMount() {
