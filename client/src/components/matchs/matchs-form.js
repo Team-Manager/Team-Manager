@@ -11,7 +11,7 @@ class MatchsForm extends Component {
             buttonText: 'Crear nuevo partido',
             match: {
                 goals: '',
-                clasification: '', 
+                clasification: '',
                 match: '',
                 result: '',
                 season: '',
@@ -45,16 +45,16 @@ class MatchsForm extends Component {
         return (
             // FORMULARIO PARA EL JUGADOR
             <Form onSubmit={this.handleSubmit}>
-                <Form.Group>
+                {/* <Form.Group>
                     <Form.Label>Goles</Form.Label>
                     <Form.Control type="number" name="goals" onChange={this.handleInputChange} value={this.state.match.goals} />
-                </Form.Group>
-            
+                </Form.Group> */}
+
                 <Form.Group>
                     <Form.Label>Clasificación</Form.Label>
                     <Form.Control type="number" name="clasification" onChange={this.handleInputChange} value={this.state.match.clasification} />
                 </Form.Group>
-               
+
                 <Form.Group>
                     <Form.Label>Partido</Form.Label>
                     <Form.Control type="text" name="match" onChange={this.handleInputChange} value={this.state.match.match} />
@@ -67,7 +67,7 @@ class MatchsForm extends Component {
                     <Form.Label>Temporada</Form.Label>
                     <Form.Control type="number" name="season" onChange={this.handleInputChange} value={this.state.match.season} />
                 </Form.Group>
-                
+
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
             </Form>
         )

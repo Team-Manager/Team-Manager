@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Players = require("./Players.model")
 
 const matchSchema = new Schema({
-    goals: Number,
+    goalsTotal: Number,
     clasification: Number,
     match: String,
+    rival: String,
+    goalsMatch: Number,
+    goalsRival: Number,
     result: Number,
     season: Number,
     players: [{ type: Schema.Types.ObjectId, ref: 'Players' }]

@@ -36,7 +36,7 @@ class PlayersEdit extends Component {
         this._service.PlayerEdit(this.state.player, this.props.player._id)
             .then(theEditedPlayer => {
                 console.log(theEditedPlayer)
-                this.setState({ name: '', lastName: '', number: '', nacionality: '', age: '', weight: '', category: '', position: '', skills: '', dominantLeg: ''}, () => this.props.updatePlayersList(theEditedPlayer.data))
+                this.setState({ lastName: '', number: '', nacionality: '', age: '', weight: '', category: '', position: '', skills: '', dominantLeg: ''}, () => this.props.updatePlayersList(theEditedPlayer.data))
                 this.props.closeModalWindow()
                 this.props.history.push('/player')
             })

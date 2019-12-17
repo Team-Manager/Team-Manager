@@ -46,20 +46,37 @@ h3{
 .img5{
   width: 400px;
   height: 400px;
- 
 }
+
 .PlayerCard{
-   display: inline-block;
-  margin:10px;
-  border-radius: 10px;
-  border: 1px solid grey;
-  justify-content: space-between;
-  opacity: 0.9;
-  background: #F1FBF8;
-  font-size: 15px;
-  padding: 20px;
-  margin-left: 5%;
+     display: inline-block;
+    /* height: 450px; */
+    /* width: 600px; */
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    justify-content: space-between;
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 5%;
+    background-image: url("./field2.jpg");
+    background-size: cover;
+    color:whitesmoke;
+    
 }
+.PlayerCard2{
+    height:450px;
+    width:300px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-left: 5%;
+    background-image: url("./field2.jpg");
+    background-size: cover;
+    margin: 5px;
+}
+
 Col{
 
   display: inline-block;
@@ -74,9 +91,16 @@ Col{
 .Buttons{
 display: flex;
 margin:3%;
+background-color:white;
 }
 .ButtonsPl{
-  margin:3%;
+   margin:-3%;
+}
+.ButtonsMatch{
+
+
+
+
 }
 
 .match-card{
@@ -87,4 +111,57 @@ margin:3%;
   background: #F1FBF8;
   font-size: 15px;
   margin: 2px;
+}
+.sec1{
+ background-image: url("./imagen8.png");
+ background-repeat: no-repeat;
+ background-size: cover;
+ padding: 300px 150px 300px 150px;
+ text-align: center;
+ padding: 30px;
+
+}
+
+.sec2{
+  background-image: url("./imagen3.png");
+  background-repeat: no-repeat;
+ background-size: cover;
+ text-align: center;
+ padding: 300px 150px 300px 150px;
+}
+
+.sec3{
+   background-image: url("./imagen4.png");
+  background-repeat: no-repeat;
+ background-size: cover;
+ text-align: start;
+ padding:30px;
+ padding: 300px 150px 300px 150px;
+
+}
+
+.Match{
+  
+  margin:10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  justify-content: space-between;
+  opacity: 0.9;
+  background: #F1FBF8;
+  font-size: 15px;
+  padding: 20px;
+  margin-left: 5%;
+  
+}
+.PlayerAlign{
+     display: inline-block;
+  margin:10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 16px;
+  margin-left: 5%;
+  background-image: url("./field2.jpg");
+  background-size: cover;
 }

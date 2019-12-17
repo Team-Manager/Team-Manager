@@ -1,11 +1,10 @@
-import React, { Component , Col} from 'react'
+import React, { Component } from 'react'
+import { Button, Form, Col } from 'react-bootstrap'
 // import Service from '../../service/PlayerMatch.service'
 
 //NO OLVIDEMOS QUE PODEMOS IMPORTAR VARIOS SERVICIOS!!!!!!!!!!
 import playersService from '../../service/Players.service'
 import playerMatchService from '../../service/PlayerMatch.service'
-
-import ListPlayers from '../players/players-list'
 import MatchPlayers from "../matchs/match-players"
 
 
@@ -14,8 +13,10 @@ class PlayersMatch extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            PlayerMatch: {},
-            players: []
+            PlayerMatch: undefined,
+            players: [],
+            checked: false,
+            teamPlayers: []
         }
         this._playerMatchService = new playerMatchService()
         this._playersService = new playersService()
@@ -45,32 +46,94 @@ class PlayersMatch extends Component {
     }
 
 
-    render() {
-        console.log(this.state.PlayerMatch)
-        console.log(this.state.players)
-        return (
-            <div className="PlayerCard">
-                <p>PARTIDO</p>
+    handleCheckBox = (checked, playerID) => {
+        // e.preventDefault()
+        console.log("ENTRAAAs")
+        console.log(checked)
+        console.log(playerID)
+        const copyTeamPlayer = [...this.state.teamPlayers]
+        if (checked) {
+            copyTeamPlayer.push(playerID)
+            this.setState({ teamPlayers: copyTeamPlayer })
+        } else {
+            let index = copyTeamPlayer.indexOf(playerID)
+            copyTeamPlayer.splice(index, 1)
+            this.setState({ teamPlayers: copyTeamPlayer })
+        }
+    }
 
-                <p>goles: {this.state.PlayerMatch.goals}</p>
-                <p>clasificación: {this.state.PlayerMatch.clasification}</p>
-                <p>partido: {this.state.PlayerMatch.match}</p>
-                <p>resultado: {this.state.PlayerMatch.result}</p>
-                <p>jornada: {this.state.PlayerMatch.season}</p>
-                {this.state.players ?
-                    this.state.players.map(player =>
-                        
-                        
-                        <MatchPlayers {...player} ></MatchPlayers>
-                        
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(this.state.teamPlayers, this.props.match.params.id)
+
+        this._playerMatchService.postOneMatch(this.state.teamPlayers, this.props.match.params.id)
+            .then(match => {
+                console.log(match.data)
+                console.log(this.state.PlayerMatch)
+                this.setState({
+                    PlayerMatch: match.data
+                })
+
+
+            })
+            .catch(err => console.log(err))
+        //enviar al back el ID del partido que estamos configurando y el state- 
+    }
+
+
+    render() {
+        // console.log(this.state.PlayerMatch)
+        console.log(this.state.PlayerMatch)
+        return this.state.PlayerMatch ? (
+            <>
+                <div className="Match">
+                    <p>PARTIDO</p>
+
+                    {/* <p>goles: {this.state.PlayerMatch.goals}</p> */}
+                    <p>clasificación: {this.state.PlayerMatch.clasification}</p>
+
+                    {this.state.PlayerMatch.players.length !== 0 ?
+                        // console.log(this.state.PlayerMatch)
+                        // console.log("ENTRAAAA")
+
+                        this.state.PlayerMatch.players.map(player => {
+
+                            return (
+                                <p>{player.name}</p>
+                            )
+                        })
+                        : <p>NO TIENES JUGADORES</p>
+
+                    }
+
+                    <p>team: {this.state.PlayerMatch.match}</p>
+                    <p>equipo rival: {this.state.PlayerMatch.rival}</p>
+                    <p>jornada: {this.state.PlayerMatch.season}</p>
+                </div>
+                <div>
+                    {this.state.PlayerMatch.players.length === 0 ?
+                        this.state.players.map(player =>
+
+
+                            <MatchPlayers {...player} checked={this.state.checked} handleCheckBox={this.handleCheckBox}></MatchPlayers>
+
                         ) :
                         null}
-            </div> 
-                
+                    {this.state.PlayerMatch.players.length === 0 ?
+                        <>
+                            <Form onSubmit={this.handleSubmit}>
+                                <Button variant="dark" size="sm" type="submit" >Carear </Button>
+                            </Form>
+                        </>
+                        : null}
+                </div>
+            </>
 
-                        
-            
-        )
+
+
+
+        ) : "HOLI"
     }
 }
 

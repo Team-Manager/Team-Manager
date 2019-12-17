@@ -47,22 +47,7 @@ class PlayersForm extends Component {
             player: { ...this.state.player, [name]: value }
         })
     }
-                                                                     //NO NECESARIO , NO TENEMOS IMAGEN!!!!!!!!!!!!!!!
-    // handleFileUpload = e => {
-    //     this.setState({ disabledButton: true, buttonText: 'Subiendo imagen...' })
-    //     const uploadData = new FormData()
-    //     uploadData.append("imageUrl", e.target.files[0])
-    //     this._filesService.handleUpload(uploadData)
-    //         .then(response => {
-    //             console.log('Subida de archivo finalizada! La URL de Cloudinray es: ', response.data.secure_url)
-    //             this.setState({
-    //                 disabledButton: false,
-    //                 buttonText: 'Crear montaña rusa',
-    //                 coaster: { ...this.state.coaster, imageUrl: response.data.secure_url }
-    //             })
-    //         })
-    //         .catch(err => console.log(err))
-    // }
+    
     render() {
         return (
             // FORMULARIO PARA EL JUGADOR
