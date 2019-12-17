@@ -12,5 +12,6 @@ export default class Services {
         console.log(id)
         return this._service.get(`/${id}`)
     }
+    postOneMatch = (players, matchID) => this._service.post(`/editMatch`, { players, matchID })
 
 }

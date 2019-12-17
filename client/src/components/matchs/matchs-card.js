@@ -29,9 +29,9 @@ class MatchsCard extends React.Component {
                 <p>Resultado: {this.props.result}</p>
                 <p>Season: {this.props.season}</p>
                 <br></br>
-                <div className="Buttons">
-                <Button className="ButtonsPl" variant="dark" onClick={this.handleShow}>Editar partido</Button>    
-                <Button className="ButtonsPl" variant="dark" onClick={() => this.props.deleteMatch(this.props._id)}>Eliminar partido</Button>
+                <div>
+                <Button className="Buttons" variant="dark" onClick={this.handleShow}>Editar partido</Button>    
+                <Button className="Buttons" variant="dark" onClick={() => this.props.deleteMatch(this.props._id)}>Eliminar partido</Button>
                 </div>
                
 
