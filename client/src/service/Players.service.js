@@ -7,15 +7,15 @@ export default class Services {
             withCredentials: true   // RUTAS PERSISTENTES
         })
     }
-    getAllPlayers = () => this._service.get('players/getAllPlayers')
-    postPlayers = player => this._service.post('players/new', player)
+    getAllPlayers = () => this._service.get('/players/getAllPlayers')
+    postPlayers = player => this._service.post('/players/new', player)
 
     PlayerEdit = (player, playerID) => {
         console.log(player)
-        return this._service.post('players/edit', { player, playerID })
+        return this._service.post('/players/edit', { player, playerID })
     }
     deletePlayer = (playerID) => {
         console.log(playerID)
-        return this._service.get(`players/delete/${playerID}`)
+        return this._service.get(`/players/delete/${playerID}`)
     }
 }

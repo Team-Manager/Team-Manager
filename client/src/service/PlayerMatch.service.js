@@ -10,8 +10,8 @@ export default class Services {
     // getOneMatch = () => this._service.get('/getOneMatch')
     getOneMatch = id => {
         console.log(id)
-        return this._service.get(`/playersMatch/${id}`)
+        return this._service.get(`/match/playersMatch/${id}`)
     }
-    postOneMatch = (players, matchID) => this._service.post(`/editMatch`, { players, matchID })
+    postOneMatch = (players, matchID) => this._service.post(`/match/playersMatch/editMatch`, { players, matchID })
 
 }

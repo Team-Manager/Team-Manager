@@ -32,7 +32,7 @@ class App extends Component {
 
   setTheUser = user => {
     this.setState({ loggedInUser: user })
-    console.log("El método 'setTheUser' de App.js se ha invocado, pasando al estado 'loggedInUser:", this.state.loggedInUser)
+    console.log("El método 'setTheUser' de App.js se ha invocado, pasando al estado 'User:", this.state.loggedInUser)
   }
 
   fetchUser = () => {
@@ -51,7 +51,6 @@ class App extends Component {
   render() {
 
     this.fetchUser()
-    console.log(this.state.loggedInUser)
     return (
       <>
         <Navbar loggedInUser={this.state.loggedInUser} setUser={this.setTheUser} />
