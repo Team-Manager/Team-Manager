@@ -4,7 +4,7 @@ export default class Services {
 
     constructor() {
         this._service = axios.create({
-            baseURL: 'http://localhost:5000/api/auth',
+            baseURL: 'https://teamanagement.herokuapp.com/api',
             withCredentials: true   // RUTAS PERSISTENTES
         })
     }
