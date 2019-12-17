@@ -42,6 +42,7 @@ class Navigation extends Component {
                             <Nav.Link as="li"><Link to="/">Inicio</Link></Nav.Link>
                             <Nav.Link as="li"><Link to="/players">Jugadores</Link></Nav.Link>
                             <Nav.Link as="li"><Link to="/statistics">Estadisticas</Link></Nav.Link>
+                            
                             <Nav.Link as="li" onClick={this.logoutUser}>Logout</Nav.Link>
                         </Nav>
                         <Nav className="ml-auto">

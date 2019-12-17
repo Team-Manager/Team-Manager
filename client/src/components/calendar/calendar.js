@@ -28,8 +28,9 @@ export default class Calendar extends Component {
 
     componentDidMount() {
         this.renderDate()
+        
      //invocar el metodo creado.
-        // this._service.get('/getAllPlayers')
+        // this.getAllPlayers()
     }
     // MEtodo para traer de la base de datos todos los partidos. 
     //Get All players
@@ -133,3 +134,7 @@ export default class Calendar extends Component {
         )
     }
 }
+//ruta post
+// en la ruta back tendreis que encontrar dentro de vuestra coleccion de player : buscar por nombre, y luego actualizar enviar el id del partido
+
+// nombre jugadores y id del partido y hacer un push 
