@@ -7,7 +7,7 @@ const matchSchema = new Schema({
     clasification: Number,
     match: String,
     rival: String,
-    goalsMatch: Number,
+    goalslocal: Number,
     goalsRival: Number,
     result: Number,
     season: Number,
