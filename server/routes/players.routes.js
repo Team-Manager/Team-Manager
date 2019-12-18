@@ -41,6 +41,18 @@ router.get("/delete/:id", (req, res) => {
         .catch(err => console.log(err));
 });
 
+router.post("/editar", (req, res) => {
+    const { name, lastName, goals, assists, minutePlays, cards, rating } = req.body.player
+    console.log(req.body)
+    Players.findByIdAndUpdate(req.body.playerID, { name, lastName, goals, assists, minutePlays, cards, rating }, { new: true })
+        .then(player => {
+            console.log(player)
+            res.json(player)
+
+        })
+        .catch(err => console.log('error!!', err))
+
+})
 
 
 

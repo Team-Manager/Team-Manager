@@ -91,17 +91,11 @@ Col{
 .Buttons{
 display: flex;
 margin:3%;
-background-color:white;
 }
 .ButtonsPl{
    margin:-3%;
 }
-.ButtonsMatch{
 
-
-
-
-}
 
 .match-card{
    white-space: nowrap;

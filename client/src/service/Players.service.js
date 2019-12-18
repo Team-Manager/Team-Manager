@@ -14,6 +14,9 @@ export default class Services {
         console.log(player)
         return this._service.post('/players/edit', { player, playerID })
     }
+    PlayerEdit = (player, playerID) => {
+        return this._service.post('/players/editar', { player, playerID })
+    }
     deletePlayer = (playerID) => {
         console.log(playerID)
         return this._service.get(`/players/delete/${playerID}`)
