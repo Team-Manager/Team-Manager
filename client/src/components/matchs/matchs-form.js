@@ -45,10 +45,10 @@ class MatchsForm extends Component {
         return (
             // FORMULARIO PARA EL JUGADOR
             <Form onSubmit={this.handleSubmit}>
-                <Form.Group>
+                {/* <Form.Group>
                     <Form.Label>Goles</Form.Label>
                     <Form.Control type="number" name="goals" onChange={this.handleInputChange} value={this.state.match.goals} />
-                </Form.Group>
+                </Form.Group> */}
 
                 <Form.Group>
                     <Form.Label>Clasificación</Form.Label>

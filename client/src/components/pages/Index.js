@@ -18,8 +18,14 @@ const Index = () => {
             
             </section >
             <section class="sec2">
-            <h2>Aqui pondremos otra cosa diferente</h2>
-            <p>Es lo que te digo</p>
+            <h2>Crea tu propia alineación
+            </h2>
+            <p>Como en las grandes batallas, a veces no gana el mejor, 
+              sino el que está más convencido</p>
+                <p>No tengas miedo a fallar, ten miedo 
+              a no intentarlo</p>
+                <p>Cada temporada es un nuevo reto para mejorar en términos de partidos, goles
+              y asistencias</p>
             </section>
             <section className="sec3">
                 <h3>Aqui otra</h3>

@@ -72,8 +72,7 @@ class PlayersMatch extends Component {
                 console.log(match.data)
                 console.log(this.state.PlayerMatch)
                 this.setState({
-                    PlayerMatch: match.data,
-                    player: []
+                    PlayerMatch: match.data
                 })
 
 
@@ -89,29 +88,21 @@ class PlayersMatch extends Component {
         return this.state.PlayerMatch ? (
             <>
                 <div className="Match">
-                    <h1>PARTIDO EN DIRECTO</h1>
+                    <p>PARTIDO</p>
 
+                    {/* <p>goles: {this.state.PlayerMatch.goals}</p> */}
                     <p>clasificación: {this.state.PlayerMatch.clasification}</p>
 
                     {this.state.PlayerMatch.players.length !== 0 ?
-
+                        // console.log(this.state.PlayerMatch)
+                        // console.log("ENTRAAAA")
 
                         this.state.PlayerMatch.players.map(player => {
 
                             return (
-                                <>
-                                    <p>{player.name}</p>
-                                    <p>{player.lastName}</p>
-                                    <p>{player.goals}</p>
-                                    <p>{player.assists}</p>
-                                    <p>{player.minutePlays}</p>
-                                    <p>{player.card}</p>
-                                    <p>{player.rating}</p>
-                                </>
-                          
-    
-                                )
-                            })
+                                <p>{player.name}</p>
+                            )
+                        })
                         : <p>NO TIENES JUGADORES</p>
 
                     }
@@ -125,14 +116,14 @@ class PlayersMatch extends Component {
                         this.state.players.map(player =>
 
 
-                            <MatchPlayers {...player} updatePlayersList={this.updatePlayersList} checked={this.state.checked} handleCheckBox={this.handleCheckBox}></MatchPlayers>
+                            <MatchPlayers {...player} checked={this.state.checked} handleCheckBox={this.handleCheckBox}></MatchPlayers>
 
                         ) :
                         null}
                     {this.state.PlayerMatch.players.length === 0 ?
                         <>
                             <Form onSubmit={this.handleSubmit}>
-                                <Button variant="dark" size="sm" type="submit" >Crear </Button>
+                                <Button variant="dark" size="sm" type="submit" >Carear </Button>
                             </Form>
                         </>
                         : null}
@@ -142,7 +133,7 @@ class PlayersMatch extends Component {
 
 
 
-        ) : "Espera un poco"
+        ) : "HOLI"
     }
 }
 
