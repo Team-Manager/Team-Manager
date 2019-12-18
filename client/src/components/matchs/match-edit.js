@@ -14,11 +14,15 @@ class MatchsEdit extends Component {
             // buttonText: 'eliminar jugador',
             match: {
                
-                goals: this.props.match.goals,
+                goalsTotal: this.props.match.goalsTotal,
                 clasification: this.props.match.clasification,
                 match: this.props.match.match,
                 result: this.props.match.result,
                 season: this.props.match.season,
+                goalsLocal:this.props.match.goalsLocal,
+                goalsRival:this.props.match.goalsRival,
+                rival:this.props.match.rival,
+
               
                
 
@@ -34,7 +38,7 @@ class MatchsEdit extends Component {
         this._service.MatchEdit(this.state.match, this.props.match._id)
             .then(theEditedMatch => {
                 console.log(theEditedMatch.data )
-                this.setState({ goals: '', clasification: '', match: '', result: '', season: '' }, () => this.props.updateMatchsList(theEditedMatch.data))
+                this.setState({ goalsTotal: '', clasification: '', match: '', result: '', season: '', goalsLocal: '', goalsRival: '', rival: ''   }, () => this.props.updateMatchsList(theEditedMatch.data))
                 this.props.closeModalWindow()
                 this.props.history.push('/match')
             })
@@ -58,8 +62,8 @@ class MatchsEdit extends Component {
         return (
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
-                    <Form.Label>Goles</Form.Label>
-                    <Form.Control type="number" name="goals" onChange={this.handleInputChange} value={this.state.match.goals} />
+                    <Form.Label>Goles totales</Form.Label>
+                    <Form.Control type="number" name="goalsTotal" onChange={this.handleInputChange} value={this.state.match.goalsTotal} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Clasificación</Form.Label>
@@ -77,6 +81,18 @@ class MatchsEdit extends Component {
                 <Form.Group>
                     <Form.Label>Temporada</Form.Label>
                     <Form.Control type="number" name="season" onChange={this.handleInputChange} value={this.state.match.season} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Goleslocales</Form.Label>
+                    <Form.Control type="number" name="goalsLocal" onChange={this.handleInputChange} value={this.state.match.goalsLocal} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Goles rival</Form.Label>
+                    <Form.Control type="number" name="goalsRival" onChange={this.handleInputChange} value={this.state.match.goalsRival} />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Equipo rival</Form.Label>
+                    <Form.Control type="number" name="rival" onChange={this.handleInputChange} value={this.state.match.rival} />
                 </Form.Group>
               
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>

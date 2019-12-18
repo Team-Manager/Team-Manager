@@ -31,7 +31,6 @@ class MatchPlayers extends Component {
                 <p><strong>Apellido:</strong>{this.props.lastName}</p>
                 <p><strong>Goles: </strong> {this.props.goals}</p>
                 <p><strong>Asistencias: </strong> {this.props.assists}</p>
-                <p><strong>Asistencias: </strong> {this.props.assists}</p>
                 <p><strong>Minutos Jugados: </strong> {this.props.minutePlays}</p>
                 <p><strong>Tarjetas: </strong> {this.props.cards}</p>
                 <p><strong>Puntuación: </strong> {this.props.rating}</p>
