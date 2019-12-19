@@ -3,13 +3,11 @@ const Schema = mongoose.Schema;
 const Players = require("./Players.model")
 
 const matchSchema = new Schema({
-    goalsTotal: Number,
     clasification: Number,
     match: String,
     rival: String,
     goalslocal: Number,
     goalsRival: Number,
-    result: Number,
     season: Number,
     players: [{ type: Schema.Types.ObjectId, ref: 'Players' }]
 

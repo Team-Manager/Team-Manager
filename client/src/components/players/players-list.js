@@ -5,6 +5,7 @@ import { Container, Row, Button, Modal } from 'react-bootstrap'
 
 import PlayersCard from './players-card'
 import PlayersForm from './players-form'
+import {Link} from 'react-router-dom'
 // import PlayersEdit from './player-edit'
 
 
@@ -36,7 +37,8 @@ class PlayersList extends React.Component {
     render() {
      
         return (
-            <section>
+            <section className="secPlayerCard secChangeCard">
+                <Link className="btn btn-sm btn-dark" to="/">Volver</Link>
                 <Container >
                       
                
@@ -60,7 +62,6 @@ class PlayersList extends React.Component {
                         <PlayersForm closeModalWindow={this.handleClose} updatePlayersList={this.updatePlayersList} />
                     </Modal.Body>
                 </Modal>
-                         
             </section>
         )
     }

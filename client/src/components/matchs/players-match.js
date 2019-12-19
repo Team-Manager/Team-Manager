@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Form, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 // import Service from '../../service/PlayerMatch.service'
 
 //NO OLVIDEMOS QUE PODEMOS IMPORTAR VARIOS SERVICIOS!!!!!!!!!!
@@ -88,6 +89,7 @@ class PlayersMatch extends Component {
         console.log(this.state.PlayerMatch)
         return this.state.PlayerMatch ? (
             <>
+                <Link className="btn btn-sm btn-dark" to="/statistics">Ver Estadisticas</Link>
                 <div className="Match">
                     <h1>PARTIDO EN DIRECTO</h1>
 
@@ -100,13 +102,13 @@ class PlayersMatch extends Component {
 
                             return (
                                 <>
-                                    <p>{player.name}</p>
-                                    <p>{player.lastName}</p>
-                                    <p>{player.goals}</p>
-                                    <p>{player.assists}</p>
-                                    <p>{player.minutePlays}</p>
-                                    <p>{player.card}</p>
-                                    <p>{player.rating}</p>
+                                    <p>Nombre: {player.name}</p>
+                                    <p>apellido: {player.lastName}</p>
+                                    <p>Goles: {player.goals}</p>
+                                    <p>Asistencias: {player.assists}</p>
+                                    <p>Minutos Jugados: {player.minutePlays}</p>
+                                    <p>Tarjetas: {player.card}</p>
+                                    <p>Puntuación: {player.rating}</p>
                                 </>
                           
     
@@ -114,10 +116,12 @@ class PlayersMatch extends Component {
                             })
                         : <p>NO TIENES JUGADORES</p>
 
-                    }
-
-                    <p>team: {this.state.PlayerMatch.match}</p>
-                    <p>equipo rival: {this.state.PlayerMatch.rival}</p>
+                    } 
+                    <p>Clasificación: {this.state.PlayerMatch.clasification}</p>
+                    <p>Equipo: {this.state.PlayerMatch.match}</p>
+                    <p>Equipo rival: {this.state.PlayerMatch.rival}</p>
+                    <p>Resultado a favor: {this.state.PlayerMatch.goalsLocal}</p>
+                    <p>Resultado en contra: {this.state.PlayerMatch.goalsRival}</p>
                     <p>jornada: {this.state.PlayerMatch.season}</p>
                 </div>
                 <div>

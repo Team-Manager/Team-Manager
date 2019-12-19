@@ -36,7 +36,7 @@ class MatchsList extends React.Component {
     render() {
 
         return (
-            <section>
+            <section className="secMatchList">
                 <Container>
                     <h1>aqui los partidos!!!</h1>
 

@@ -12,14 +12,10 @@ const playerSchema = new Schema({
     position: String,
     skills: String,
     dominantLeg: String,
-    goals: Number,
-    assists: Number,
-    cards: String,
-    minutePlays: Number,
-    rating: Number,
-    titular:Boolean,
+
+
     matchs: [{ type: Schema.Types.ObjectId, ref: 'Matchs' }]
-    
+
 
 }, {
     timestamps: {

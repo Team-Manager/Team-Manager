@@ -22,12 +22,14 @@ class MatchsCard extends React.Component {
 
         return (
             <Col className="match-card">
-                <p>Jugadores: {this.props.category}</p>
-                <p>Goals: {this.props.goals}</p>
+                
+                
                 <p>Clasificación: {this.props.clasification}</p>
-                <p>Partido: {this.props.match}</p>
-                <p>Resultado: {this.props.result}</p>
-                <p>Season: {this.props.season}</p>
+                <p>Equipo: {this.props.match}</p>
+                <p>Equipo Rival: {this.props.rival}</p>
+                <p>Resultado a Favor: {this.props.goalsLocal}</p>
+                <p>Resultado en Contra: {this.props.goalsRival}</p>
+                <p>Jornada: {this.props.season}</p>
                 <br></br>
                 <div>
                 <Button className="Buttons" variant="dark" onClick={this.handleShow}>Editar partido</Button>    

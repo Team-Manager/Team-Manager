@@ -9,7 +9,11 @@ export default class Services {
         })
     }
 
-    getAllMatchs = () => this._service.get('/matchs/getAllMatchs')
+    getAllMatchs = () => {
+        console.log("ESTOY EN EL SERVICIO YAAAY ")
+        return this._service.get('/matchs/getAllMatchs')
+    }
+
     postMatchs = match => this._service.post('/matchs/new', match)
 
     MatchEdit = (match, matchID) => {

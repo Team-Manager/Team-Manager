@@ -70,8 +70,9 @@ h3{
     border-radius: 10px;
     border: 1px solid grey;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 17px;
     margin-left: 5%;
+    padding:15px;
     background-image: url("./field2.jpg");
     background-size: cover;
     margin: 5px;
@@ -132,6 +133,22 @@ margin:3%;
  padding:30px;
  padding: 300px 150px 300px 150px;
 
+}
+.secPlayerCard{
+   background-image: url("./imagen7.png");
+     background-repeat: no-repeat;
+ background-size: cover;
+
+}
+.secChangeCard{
+  color:white;
+  
+
+}
+.secMatchList{
+  background-image: url("./imagen6.png");
+     background-repeat: no-repeat;
+ background-size: cover;
 }
 
 .Match{

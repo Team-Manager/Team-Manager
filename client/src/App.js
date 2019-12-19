@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
+
 import Service from './service/Auth.service'
 
 /* CUSTOM UI COMPONENTS */
@@ -16,6 +17,7 @@ import MatchsForm from './components/matchs/matchs-form'
 import MatchsEdit from './components/matchs/match-edit'
 import PlayersMatch from "./components/matchs/players-match"
 import MatchPlayers from "./components/matchs/match-players"
+import Graphics from './components/graphics/graphics'
 /* CUSTOM AUTH COMPONENTS */
 import Signup from './components/auth/Signup'
 import Login from './components/auth/Login'
@@ -70,6 +72,9 @@ class App extends Component {
           <Route path="/match" render={match => this.state.loggedInUser ? <MatchsList {...match} loggedInUser={this.state.loggedInUser} /> : null} />
           <Route path="/playersMatch/:id" render={match => this.state.loggedInUser ? <PlayersMatch {...match} loggedInUser={this.state.loggedInUser} /> : null} />
           <Route path="/matchPlayers/:id" render={match => this.state.loggedInUser ? <MatchPlayers {...match} loggedInUser={this.state.loggedInUser} /> : null} />
+          <Route path="/statistics" render={match => this.state.loggedInUser ? <Graphics {...match} loggedInUser={this.state.loggedInUser} /> : null} />
+
+          {/* <Route path="/matchGraphics/:id" render={match => this.state.loggedInUser ? <Graphics {...match} loggedInUser={this.state.loggedInUser} /> : null} /> */}
 
 
         </Switch>

@@ -26,7 +26,7 @@ router.post('/new', (req, res) => {
 
 router.post('/edit', (req, res) => {
     const { name, lastName, age, weight, category, position, skills, dominantLeg } = req.body.player
-    console.log(req.body)
+    // console.log(req.body)
     Players.findByIdAndUpdate(req.body.playerID, { name, lastName, age, weight, category, position, skills, dominantLeg }, { new: true })
         .then(player => {
             console.log(player)

@@ -22,8 +22,7 @@ class PlayersCard extends React.Component {
         console.log(this.state)
         
         return (
-                        
-            <div md={4}>
+                <div md={4}>
                 <div className="PlayerCard2">
                     <p>Nombre: {this.props.name}</p>
                     <p>Apellido: {this.props.lastName}</p>
@@ -36,6 +35,7 @@ class PlayersCard extends React.Component {
                     <p>Pierna Dominante: {this.props.dominantLeg}</p>
                     <p>Habilidades Técnicas: {this.props.skills}</p>
                 </div>
+                
                 
                 <div className="Buttons">
                     <Button className="ButtonsPl" variant="dark" onClick={this.handleShow}>Editar jugador</Button>
@@ -52,7 +52,6 @@ class PlayersCard extends React.Component {
                     </Modal.Body>
                     </Modal>
             </div>
-
 
             
 

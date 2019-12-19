@@ -5,7 +5,9 @@ const Player = require('../models/Players.model')
 
 
 router.get('/getAllMatchs', (req, res) => {
+
     Matchs.find()
+        .populate("players")
         .then(allmatchs => res.json(allmatchs))
         .catch(err => console.log('DB error', err))
 

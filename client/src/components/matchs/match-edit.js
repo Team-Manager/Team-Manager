@@ -18,7 +18,7 @@ class MatchsEdit extends Component {
                 clasification: this.props.match.clasification,
                 match: this.props.match.match,
                 result: this.props.match.result,
-                season: this.props.match.season,
+                Jornada: this.props.match.season,
                 goalsLocal:this.props.match.goalsLocal,
                 goalsRival:this.props.match.goalsRival,
                 rival:this.props.match.rival,
@@ -61,38 +61,31 @@ class MatchsEdit extends Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-                <Form.Group>
-                    <Form.Label>Goles totales</Form.Label>
-                    <Form.Control type="number" name="goalsTotal" onChange={this.handleInputChange} value={this.state.match.goalsTotal} />
-                </Form.Group>
+            
                 <Form.Group>
                     <Form.Label>Clasificación</Form.Label>
                     <Form.Control type="number" name="clasification" onChange={this.handleInputChange} value={this.state.match.clasification} />
                 </Form.Group>
                 
                 <Form.Group>
-                    <Form.Label>Partido</Form.Label>
+                    <Form.Label>Equipo: </Form.Label>
                     <Form.Control type="text" name="match" onChange={this.handleInputChange} value={this.state.match.match} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Resultado</Form.Label>
-                    <Form.Control type="number" name="result" onChange={this.handleInputChange} value={this.state.match.result} />
+                    <Form.Label>Equipo Rival: </Form.Label>
+                    <Form.Control type="text" name="rival" onChange={this.handleInputChange} value={this.state.match.rival} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Temporada</Form.Label>
-                    <Form.Control type="number" name="season" onChange={this.handleInputChange} value={this.state.match.season} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Goleslocales</Form.Label>
+                    <Form.Label>resultado a favor: </Form.Label>
                     <Form.Control type="number" name="goalsLocal" onChange={this.handleInputChange} value={this.state.match.goalsLocal} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Goles rival</Form.Label>
+                    <Form.Label>Resultado en Contra: </Form.Label>
                     <Form.Control type="number" name="goalsRival" onChange={this.handleInputChange} value={this.state.match.goalsRival} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Equipo rival</Form.Label>
-                    <Form.Control type="number" name="rival" onChange={this.handleInputChange} value={this.state.match.rival} />
+                    <Form.Label>Temporada: </Form.Label>
+                    <Form.Control type="number" name="season" onChange={this.handleInputChange} value={this.state.match.season} />
                 </Form.Group>
               
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
