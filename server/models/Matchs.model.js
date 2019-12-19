@@ -6,11 +6,11 @@ const matchSchema = new Schema({
     clasification: Number,
     match: String,
     rival: String,
-    goalslocal: Number,
+    goalsLocal: Number,
     goalsRival: Number,
     season: Number,
-    players: [{ type: Schema.Types.ObjectId, ref: 'Players' }]
-
+    players: [{ type: Schema.Types.ObjectId, ref: 'Players' }],
+    date: Date,
 }, {
     timestamps: {
         createdAt: 'created_at',
@@ -18,5 +18,5 @@ const matchSchema = new Schema({
     }
 });
 
-const Matchs = mongoose.model('Match', matchSchema);
+const Matchs = mongoose.model('Matchs', matchSchema);
 module.exports = Matchs;

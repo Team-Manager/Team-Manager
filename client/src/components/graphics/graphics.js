@@ -25,6 +25,7 @@ class Graphics extends Component {
         const MatchsList = this.props.match.params.id
         this._MatchsService.getAllMatchs()
             .then(oneMatchfromDB => {
+
                 this.setState({ matches: oneMatchfromDB.data })
 
             })
@@ -38,14 +39,14 @@ class Graphics extends Component {
         console.log("holaaaaaa", this.state.matches)
         return (
             <div>
-                <p>Hola soy estadísticas</p>
+                <h1 className="ControlPlayers">Controla a tus jugadores</h1>
 
+                <Link className="btn btn-sm btn-dark" to="/">Volver</Link>
 
                 {this.state.matches.map((match, idx) => <Chart {...match} key={idx} ></Chart>)}
 
 
 
-                <Link className="btn btn-sm btn-dark" to="/">Volver</Link>
             </div>
         )
 

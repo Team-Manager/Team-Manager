@@ -24,6 +24,7 @@ class Navigation extends Component {
         return (
 
             this.props.loggedInUser ?
+                
 
                 <Navbar bg="dark" variant="dark" expand="md">
                     <Navbar.Brand href="/">

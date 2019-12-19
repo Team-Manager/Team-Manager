@@ -12,14 +12,12 @@ class MatchPlayers extends Component {
             showModalWindow: false,
             player:
             {
-                name: "",
-                lastName: "",
-                goals: "",
-                assists: "",
-                minutePlays: "",
+                goals: undefined,
+                assists: undefined,
+                minutePlays: undefined,
                 cards: "",
-                rating: "",
-                titular: "",
+                rating: undefined,
+                // titular: "",
             }
 
 
@@ -33,11 +31,15 @@ class MatchPlayers extends Component {
     handleSubmit = e => {
 
         e.preventDefault()
-        this._service
-            .PlayerEdit(this.state.player, this.props._id)
-            .then(theEditedPlayer => {
 
-                this.props.updatePlayersList()
+        this._service
+            .addPlayerToMatch(this.state.player, this.props._id, this.props.matchID)
+            .then(theEditedPlayer => {
+                console.log(theEditedPlayer)
+                this.setState({
+                    player: theEditedPlayer.data.performance,
+                }, () => this.props.updateMatchsList())
+
 
                 this.handleClose()
             })
@@ -60,7 +62,7 @@ class MatchPlayers extends Component {
 
 
     render() {
-
+        console.log(this.props)
         return (
 
 
@@ -70,11 +72,11 @@ class MatchPlayers extends Component {
 
                     <p><strong>Nombre: </strong>{this.props.name}</p>
                     <p><strong>Apellido:</strong>{this.props.lastName}</p>
-                    <p><strong>Goles: </strong> {this.props.goals}</p>
-                    <p><strong>Asistencias: </strong> {this.props.assists}</p>
-                    <p><strong>Minutos Jugados: </strong> {this.props.minutePlays}</p>
-                    <p><strong>Tarjetas: </strong> {this.props.cards}</p>
-                    <p><strong>Puntuación: </strong> {this.props.rating}</p>
+                    <p><strong>Goles: </strong> {this.state.player.goals}</p>
+                    <p><strong>Asistencias: </strong> {this.state.player.assists}</p>
+                    <p><strong>Minutos Jugados: </strong> {this.state.player.minutePlays}</p>
+                    <p><strong>Tarjetas: </strong> {this.state.player.cards}</p>
+                    <p><strong>Puntuación: </strong> {this.state.player.rating}</p>
 
                     <div>
                         <Button className="Buttons" variant="dark" onClick={this.handleShow}>editar</Button>
@@ -93,15 +95,7 @@ class MatchPlayers extends Component {
                     </Modal.Header>
                     <Modal.Body>
 
-                        {/* <Form onSubmit={this.handleSubmit}>
-                            <Form.Group>
-                                <Form.Label>Nombre: </Form.Label>
-                                <Form.Control type="text" name="name" onChange={this.handleInputChange} value={this.state.player.name} />
-                            </Form.Group>
-                            <Form.Group>
-                                <Form.Label>Apellido: </Form.Label>
-                                <Form.Control type="text" name="lastName" onChange={this.handleInputChange} value={this.state.player.lastName} />
-                            </Form.Group>
+                        <Form onSubmit={this.handleSubmit}>
 
                             <Form.Group>
                                 <Form.Label>goles: </Form.Label>
@@ -125,7 +119,7 @@ class MatchPlayers extends Component {
                             </Form.Group>
 
                             <Button variant="dark" size="sm" type="submit" onClick={this.handleClose}>Información Del Jugador</Button>
-                        </Form> */}
+                        </Form>
                     </Modal.Body>
                 </Modal>
             </>

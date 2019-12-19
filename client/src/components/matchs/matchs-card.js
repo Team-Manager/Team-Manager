@@ -30,6 +30,7 @@ class MatchsCard extends React.Component {
                 <p>Resultado a Favor: {this.props.goalsLocal}</p>
                 <p>Resultado en Contra: {this.props.goalsRival}</p>
                 <p>Jornada: {this.props.season}</p>
+                <p>Fecha Del Partido: {this.props.date}</p>
                 <br></br>
                 <div>
                 <Button className="Buttons" variant="dark" onClick={this.handleShow}>Editar partido</Button>    

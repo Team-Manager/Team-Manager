@@ -8,15 +8,14 @@ export default class Services {
         })
     }
     getAllPlayers = () => this._service.get('/players/getAllPlayers')
+    
     postPlayers = player => this._service.post('/players/new', player)
 
-    PlayerEdit = (player, playerID) => {
-        console.log(player, playerID)
-        return this._service.post('/players/edit', { player, playerID })
+    PlayerEdit = (player, playerID) => this._service.post('/players/edit', { player, playerID })
+
+    addPlayerToMatch = (player, playerID, matchID) => {
+        return this._service.post('/players/addToMatch', { player, playerID, matchID })
     }
-    // PlayerEdit = (player, playerID) => {
-    //     return this._service.post('/players/editar', { player, playerID })
-    // }
     deletePlayer = (playerID) => {
         console.log(playerID)
         return this._service.get(`/players/delete/${playerID}`)

@@ -5,7 +5,7 @@ import { Container, Row, Button, Modal } from 'react-bootstrap'
 
 import PlayersCard from './players-card'
 import PlayersForm from './players-form'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import PlayersEdit from './player-edit'
 
 
@@ -19,11 +19,11 @@ class PlayersList extends React.Component {
         }
     }
     deletePlayerHandler = id => {
-        
-            this._service.deletePlayer(id)
+
+        this._service.deletePlayer(id)
             .then(player => console.log(player))
             .catch(err => console.log("Error", err))
-             this.updatePlayersList()
+        this.updatePlayersList()
     }
 
     componentDidMount = () => this.updatePlayersList()
@@ -35,25 +35,25 @@ class PlayersList extends React.Component {
     handleShow = () => this.setState({ showModalWindow: true })
     handleClose = () => this.setState({ showModalWindow: false })
     render() {
-     
+
         return (
             <section className="secPlayerCard secChangeCard">
                 <Link className="btn btn-sm btn-dark" to="/">Volver</Link>
                 <Container >
-                      
-               
-                   
+
+
+
                     <h1>aqui los players!!!</h1>
-                    
-                    
+
+
                     {
                         this.props.loggedInUser && <Button variant="dark" onClick={this.handleShow}>Nuevo jugador</Button>
 
                     }
                     <Row >
                         {this.state.players.map((player, idx) => <PlayersCard key={player._id} {...player} updatePlayersList={this.updatePlayersList} deletePlayer={this.deletePlayerHandler} />)}
-                        </Row>
-                    </Container>
+                    </Row>
+                </Container>
                 <Modal show={this.state.showModalWindow} onHide={this.handleClose}>
                     <Modal.Header closeButton>
                         <Modal.Title>Nuevo jugador</Modal.Title>

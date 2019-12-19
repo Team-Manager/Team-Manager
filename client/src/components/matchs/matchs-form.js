@@ -10,12 +10,13 @@ class MatchsForm extends Component {
         this.state = {
             buttonText: 'Crear nuevo partido',
             match: {
-                clasification: '',
+                clasification: undefined,
                 match: '',
                 rival: '',
-                goalsLocal: '',
-                goalsRival: '',
+                goalsLocal: undefined,
+                goalsRival: undefined,
                 season: '',
+                date: undefined,
                 players: []
 
             }

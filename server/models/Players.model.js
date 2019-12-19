@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const Matchs = require("./Matchs.model")
+const Performance = require("./Performance.model")
+
+
+
 const playerSchema = new Schema({
     name: String,
     lastName: String,

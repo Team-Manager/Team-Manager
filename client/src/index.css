@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 100;
 }
 
 code {
@@ -121,9 +122,9 @@ justify-content: space-between;
 .sec2{
   background-image: url("./imagen3.png");
   background-repeat: no-repeat;
- background-size: cover;
- text-align: center;
- padding: 300px 150px 300px 150px;
+  background-size: cover;
+  padding: 300px 150px 300px 150px;
+  padding-left: 600px;
 }
 
 .sec3{
@@ -177,3 +178,17 @@ justify-content: space-between;
   background-image: url("./field2.jpg");
   background-size: cover;
 }
+.Goals{
+  display: flex;
+  font-weight: bold;
+}
+.ControlPlayers{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.Up{
+  margin: 20px;
+}
+
+

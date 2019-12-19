@@ -11,7 +11,7 @@ const performanceSchema = new Schema({
     rating: Number,
     titular: Boolean,
 
-    // matchs: [{ type: Schema.Types.ObjectId, ref: 'Matchs' }],
+    match: { type: Schema.Types.ObjectId, ref: 'Matchs' },
 
 
 

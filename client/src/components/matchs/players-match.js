@@ -110,26 +110,27 @@ class PlayersMatch extends Component {
                                     <p>Tarjetas: {player.card}</p>
                                     <p>Puntuación: {player.rating}</p>
                                 </>
-                          
-    
-                                )
-                            })
+
+
+                            )
+                        })
                         : <p>NO TIENES JUGADORES</p>
 
-                    } 
+                    }
                     <p>Clasificación: {this.state.PlayerMatch.clasification}</p>
                     <p>Equipo: {this.state.PlayerMatch.match}</p>
                     <p>Equipo rival: {this.state.PlayerMatch.rival}</p>
                     <p>Resultado a favor: {this.state.PlayerMatch.goalsLocal}</p>
                     <p>Resultado en contra: {this.state.PlayerMatch.goalsRival}</p>
                     <p>jornada: {this.state.PlayerMatch.season}</p>
+                    <p>Fecha de partido: {this.state.PlayerMatch.date}</p>
                 </div>
                 <div>
                     {this.state.PlayerMatch.players.length === 0 ?
                         this.state.players.map(player =>
 
 
-                            <MatchPlayers {...player} updatePlayersList={this.updatePlayersList} checked={this.state.checked} handleCheckBox={this.handleCheckBox}></MatchPlayers>
+                            <MatchPlayers {...player} matchID={this.state.PlayerMatch._id} updateMatchsList={this.updateMatchsList} updatePlayersList={this.updatePlayersList} checked={this.state.checked} handleCheckBox={this.handleCheckBox}></MatchPlayers>
 
                         ) :
                         null}

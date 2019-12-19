@@ -8,6 +8,13 @@ router.get('/getAllMatchs', (req, res) => {
 
     Matchs.find()
         .populate("players")
+        .populate({
+            path: 'players',
+            populate: {
+                path: 'performance',
+                model: "Performance"
+            }
+        })
         .then(allmatchs => res.json(allmatchs))
         .catch(err => console.log('DB error', err))
 
@@ -19,6 +26,13 @@ router.get('/playersMatch/:id', (req, res) => {
     console.log(req.params.id)
     Matchs.findById(matchsId)
         .populate("players")
+        .populate({
+            path: 'players',
+            populate: {
+                path: 'performance',
+                model: "Performance"
+            }
+        })
         .then(theMatchs => {
             console.log(theMatchs)
             return res.json(theMatchs)
@@ -47,15 +61,7 @@ router.get("/delete/:id", (req, res) => {
         .catch(err => console.log(err));
 });
 
-router.get("/playersMatch/:id", (req, res) => {
-    console.log(req.params)
-    Matchs.findById(req.params.id)
-        .then(match => {
-            console.log(match)
-            res.json(match)
-        })
-        .catch(err => console.log(err));
-});
+
 router.post("/playersMatch/editMatch", (req, res) => {
 
 
@@ -69,7 +75,14 @@ router.post("/playersMatch/editMatch", (req, res) => {
             }
         }, { new: true }
 
-    ).populate("players")
+    ).populate({
+        path: 'players',
+        populate: {
+            path: 'performance',
+            model: "Performance"
+        }
+    })
+
         .then(match => {
 
             return res.json(match)

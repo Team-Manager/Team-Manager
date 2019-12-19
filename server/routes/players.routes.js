@@ -1,10 +1,14 @@
 const express = require('express')
 const router = express.Router()
 const Players = require('../models/Players.model')
+const Performance = require('../models/Performance.model')
+
 
 
 router.get('/getAllPlayers', (req, res) => {
     Players.find()
+        .populate("performance")
+        .populate("matches")
         .then(allplayers => res.json(allplayers))
         .catch(err => console.log('DB error', err))
 })
@@ -15,9 +19,10 @@ router.get('/:id', (req, res) => {
         .then(thePlayers => res.json(thePlayers))
         .catch(err => console.log('DB error', err))
 })
-router.post('/new', (req, res) => {
 
+router.post('/new', (req, res) => {
     const players = req.body
+    console.log("SE SETA CREANDO", players)
     Players.create(players)
         .then(theNewPlayers => res.json(theNewPlayers))
         .catch(err => console.log('DB error', err))
@@ -43,18 +48,26 @@ router.get("/delete/:id", (req, res) => {
         .catch(err => console.log(err));
 });
 
-// router.post("/editar", (req, res) => {
-//     const { name, lastName, goals, assists, minutePlays, cards, rating } = req.body.player
-//     console.log(req.body)
-//     Players.findByIdAndUpdate(req.body.playerID, { name, lastName, goals, assists, minutePlays, cards, rating }, { new: true })
-//         .then(player => {
-//             console.log(player)
-//             res.json(player)
+router.post("/addToMatch", (req, res) => {
+    const { goals, assists, minutePlays, cards, rating } = req.body.player
+    // console.log(req.body)
 
-//         })
-//         .catch(err => console.log('error!!', err))
+    Performance.create({ goals, assists, minutePlays, cards, rating, match: req.body.matchID })
+        .then(performance => {
 
-// })
+            Players.findByIdAndUpdate(req.body.playerID, { $addToSet: { performance: performance._id, matchs: req.body.matchID } }, { new: true })
+                .populate("performance")
+                .populate("matchs")
+                .then(player => {
+
+                    return res.json({ player, performance })
+
+                })
+                .catch(err => console.log(err))
+        })
+        .catch(err => console.log('error!!', err))
+
+})
 
 
 

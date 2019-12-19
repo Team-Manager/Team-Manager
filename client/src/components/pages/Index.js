@@ -10,19 +10,25 @@ const Index = () => {
         <>
             <section className="sec1">
                 <h1>Manager App!</h1>
-                <p>la app preferida de los entrenadores de futbol</p>
-                {/* <img className="prueba3" src="./images/imagen5.png" width="30" height="30"/> */}
-                {/* <button type="submit">Día de Partido</button> */}
+                <h2>La app preferida de los entrenadores de futbol</h2>
+                <p>"TU TRIUNFO SERÁ EL MIO"</p>
                 <Link className="btn btn-sm btn-dark" to="/match">Día De Partido</Link>
                 <Calendar></Calendar>
             
             </section >
             <section className="sec2">
-            <h2>Aqui pondremos otra cosa diferente</h2>
-            <p>Es lo que te digo</p>
+                <h2 className="Up">Todo lo que necesitas para ser un gran entrenador</h2>
+                <ul>
+                    
+                    <li><h3>Registra a tu equipo</h3></li>
+                    <li><h3>Crea tus propias alineaciones</h3></li>
+                    <li><h3>Obten las mejores estadisticas</h3></li>
+                    <li><h3>Registra tus entrenamientos y partidos</h3></li>
+                        
+                </ul>
             </section>
             <section className="sec3">
-                <h3>Aqui otra</h3>
+                <h3></h3>
                 <p>lorem borja ipsum lorem bipsm borja borji borjita bor borjinho bor ipsum</p>
             </section>
             {/* <footer className ="footer">
