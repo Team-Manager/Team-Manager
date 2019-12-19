@@ -16,6 +16,7 @@ router.get('/:id', (req, res) => {
         .catch(err => console.log('DB error', err))
 })
 router.post('/new', (req, res) => {
+
     const players = req.body
     Players.create(players)
         .then(theNewPlayers => res.json(theNewPlayers))
@@ -26,11 +27,12 @@ router.post('/new', (req, res) => {
 
 router.post('/edit', (req, res) => {
     const { name, lastName, age, weight, category, position, skills, dominantLeg } = req.body.player
+    console.log(name, lastName, age, weight, category, position, skills, dominantLeg)
     // console.log(req.body)
     Players.findByIdAndUpdate(req.body.playerID, { name, lastName, age, weight, category, position, skills, dominantLeg }, { new: true })
         .then(player => {
-            console.log(player)
-            res.json(player)
+            console.log("ESTE ES EL NUEVO PLAYER", player)
+            return res.json(player)
         })
         .catch(err => console.log('error!!', err))
 })
@@ -41,18 +43,18 @@ router.get("/delete/:id", (req, res) => {
         .catch(err => console.log(err));
 });
 
-router.post("/editar", (req, res) => {
-    const { name, lastName, goals, assists, minutePlays, cards, rating } = req.body.player
-    console.log(req.body)
-    Players.findByIdAndUpdate(req.body.playerID, { name, lastName, goals, assists, minutePlays, cards, rating }, { new: true })
-        .then(player => {
-            console.log(player)
-            res.json(player)
+// router.post("/editar", (req, res) => {
+//     const { name, lastName, goals, assists, minutePlays, cards, rating } = req.body.player
+//     console.log(req.body)
+//     Players.findByIdAndUpdate(req.body.playerID, { name, lastName, goals, assists, minutePlays, cards, rating }, { new: true })
+//         .then(player => {
+//             console.log(player)
+//             res.json(player)
 
-        })
-        .catch(err => console.log('error!!', err))
+//         })
+//         .catch(err => console.log('error!!', err))
 
-})
+// })
 
 
 

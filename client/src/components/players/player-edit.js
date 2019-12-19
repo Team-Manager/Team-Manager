@@ -11,7 +11,7 @@ class PlayersEdit extends Component {
         // // this._filesService = new FilesService()
         this.state = {
             buttonText: 'editar jugador',
-        
+
             player: {
                 name: this.props.player.name,
                 lastName: this.props.player.lastName,
@@ -23,8 +23,8 @@ class PlayersEdit extends Component {
                 position: this.props.player.position,
                 skills: this.props.player.skills,
                 dominantLeg: this.props.player.dominantLeg,
-
             }
+
         }
     }
 
@@ -32,11 +32,11 @@ class PlayersEdit extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-
+        console.log(this.state.player)
         this._service.PlayerEdit(this.state.player, this.props.player._id)
             .then(theEditedPlayer => {
                 console.log(theEditedPlayer)
-                this.setState({ name: '',lastName: '', number: '', nacionality: '', age: '', weight: '', category: '', position: '', skills: '', dominantLeg: ''}, () => this.props.updatePlayersList(theEditedPlayer.data))
+                this.props.updatePlayersList(theEditedPlayer.data)
                 this.props.closeModalWindow()
                 this.props.history.push('/player')
             })
@@ -45,15 +45,25 @@ class PlayersEdit extends Component {
     }
 
 
- 
+
 
 
 
     handleInputChange = e => {
         let { name, value } = e.target
-        this.setState({
-            player: { ...this.state.player, [name]: value }
-        })
+        console.log(typeof e.target.type)
+        if (e.target.type === "number") {
+
+            this.setState({
+                player: { ...this.state.player, [name]: parseInt(value) }
+            })
+        }
+        else {
+            this.setState({
+                player: { ...this.state.player, [name]: value }
+            })
+        }
+        // console.log(typeof value)
     }
 
     render() {
@@ -88,6 +98,7 @@ class PlayersEdit extends Component {
                 <Form.Group>
                     <Form.Label>Category</Form.Label>
                     <Form.Control as="select" type="text" name="category" onChange={this.handleInputChange} value={this.state.player.category}>
+                        <option></option>
                         <option>Alevin</option>
                         <option>Infantil</option>
                         <option>Cadete</option>
@@ -101,6 +112,7 @@ class PlayersEdit extends Component {
                 <Form.Group>
                     <Form.Label>pierna dominante</Form.Label>
                     <Form.Control as="select" type="text" name="dominantLeg" onChange={this.handleInputChange} value={this.state.player.dominantLeg} >
+                        <option></option>
                         <option>derecha</option>
                         <option>izquierda</option>
                         <option>ambas piernas</option>
@@ -110,13 +122,13 @@ class PlayersEdit extends Component {
                     <Form.Label>Skills</Form.Label>
                     <Form.Control type="text" name="skills" onChange={this.handleInputChange} value={this.state.player.skills} />
                 </Form.Group>
-               
+
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
-                
-                </Form>
-                
+
+            </Form>
+
         )
-        
+
     }
 }
 export default PlayersEdit

@@ -13,12 +13,14 @@ class MatchPlayers extends Component {
             player:
             {
                 name: "",
+                lastName: "",
                 goals: "",
                 assists: "",
                 minutePlays: "",
                 cards: "",
-                rating: ""
-            },
+                rating: "",
+                titular: "",
+            }
 
 
         }
@@ -91,7 +93,7 @@ class MatchPlayers extends Component {
                     </Modal.Header>
                     <Modal.Body>
 
-                        <Form onSubmit={this.handleSubmit}>
+                        {/* <Form onSubmit={this.handleSubmit}>
                             <Form.Group>
                                 <Form.Label>Nombre: </Form.Label>
                                 <Form.Control type="text" name="name" onChange={this.handleInputChange} value={this.state.player.name} />
@@ -123,7 +125,7 @@ class MatchPlayers extends Component {
                             </Form.Group>
 
                             <Button variant="dark" size="sm" type="submit" onClick={this.handleClose}>Información Del Jugador</Button>
-                        </Form>
+                        </Form> */}
                     </Modal.Body>
                 </Modal>
             </>

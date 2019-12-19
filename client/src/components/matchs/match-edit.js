@@ -13,18 +13,18 @@ class MatchsEdit extends Component {
             buttonText: 'editar partido',
             // buttonText: 'eliminar jugador',
             match: {
-               
+
                 goalsTotal: this.props.match.goalsTotal,
                 clasification: this.props.match.clasification,
                 match: this.props.match.match,
                 result: this.props.match.result,
                 Jornada: this.props.match.season,
-                goalsLocal:this.props.match.goalsLocal,
-                goalsRival:this.props.match.goalsRival,
-                rival:this.props.match.rival,
+                goalsLocal: this.props.match.goalsLocal,
+                goalsRival: this.props.match.goalsRival,
+                rival: this.props.match.rival,
 
-              
-               
+
+
 
             }
         }
@@ -37,8 +37,8 @@ class MatchsEdit extends Component {
 
         this._service.MatchEdit(this.state.match, this.props.match._id)
             .then(theEditedMatch => {
-                console.log(theEditedMatch.data )
-                this.setState({ goalsTotal: '', clasification: '', match: '', result: '', season: '', goalsLocal: '', goalsRival: '', rival: ''   }, () => this.props.updateMatchsList(theEditedMatch.data))
+                console.log(theEditedMatch.data)
+                this.props.updateMatchsList(theEditedMatch.data)
                 this.props.closeModalWindow()
                 this.props.history.push('/match')
             })
@@ -61,12 +61,12 @@ class MatchsEdit extends Component {
     render() {
         return (
             <Form onSubmit={this.handleSubmit}>
-            
+
                 <Form.Group>
                     <Form.Label>Clasificación</Form.Label>
                     <Form.Control type="number" name="clasification" onChange={this.handleInputChange} value={this.state.match.clasification} />
                 </Form.Group>
-                
+
                 <Form.Group>
                     <Form.Label>Equipo: </Form.Label>
                     <Form.Control type="text" name="match" onChange={this.handleInputChange} value={this.state.match.match} />
@@ -87,7 +87,7 @@ class MatchsEdit extends Component {
                     <Form.Label>Temporada: </Form.Label>
                     <Form.Control type="number" name="season" onChange={this.handleInputChange} value={this.state.match.season} />
                 </Form.Group>
-              
+
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
             </Form>
         )

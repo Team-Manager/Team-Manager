@@ -13,8 +13,8 @@ const playerSchema = new Schema({
     skills: String,
     dominantLeg: String,
 
-
-    matchs: [{ type: Schema.Types.ObjectId, ref: 'Matchs' }]
+    matchs: [{ type: Schema.Types.ObjectId, ref: 'Matchs' }],
+    performance: [{ type: Schema.Types.ObjectId, ref: 'Performance' }],
 
 
 }, {

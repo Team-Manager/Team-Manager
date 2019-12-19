@@ -22,8 +22,8 @@ class PlayersForm extends Component {
                 position: '',
                 skills: '',
                 dominantLeg: '',
-               
-                
+
+
             }
         }
     }
@@ -38,16 +38,17 @@ class PlayersForm extends Component {
                 this.props.player.push(`/getAllPlayers${playersID}`)
 
             })
-                .catch(err => console.log(err))
+            .catch(err => console.log(err))
     }
 
     handleInputChange = e => {
         let { name, value } = e.target
+
         this.setState({
             player: { ...this.state.player, [name]: value }
         })
     }
-    
+
     render() {
         return (
             // FORMULARIO PARA EL JUGADOR
@@ -93,19 +94,19 @@ class PlayersForm extends Component {
                 <Form.Group>
                     <Form.Label>pierna dominante</Form.Label>
                     <Form.Control as="select" type="text" name="dominantLeg" onChange={this.handleInputChange} value={this.state.player.dominantLeg} >
-                    <option>derecha</option>
-                    <option>izquierda</option>
-                    <option>ambas piernas</option>
+                        <option>derecha</option>
+                        <option>izquierda</option>
+                        <option>ambas piernas</option>
                     </Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Skills</Form.Label>
                     <Form.Control type="text" name="skills" onChange={this.handleInputChange} value={this.state.player.skills} />
                 </Form.Group>
-             
+
                 <Button variant="dark" size="sm" type="submit" disabled={this.state.disabledButton}>{this.state.buttonText}</Button>
-                </Form>
-            
+            </Form>
+
         )
     }
 }

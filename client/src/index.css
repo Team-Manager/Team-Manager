@@ -92,9 +92,10 @@ Col{
 .Buttons{
 display: flex;
 margin:3%;
+justify-content: space-between;
 }
 .ButtonsPl{
-   margin:-3%;
+   display:flex;
 }
 
 
