@@ -98,7 +98,6 @@ class PlayersEdit extends Component {
                 <Form.Group>
                     <Form.Label>Category</Form.Label>
                     <Form.Control as="select" type="text" name="category" onChange={this.handleInputChange} value={this.state.player.category}>
-                        <option></option>
                         <option>Alevin</option>
                         <option>Infantil</option>
                         <option>Cadete</option>
@@ -112,7 +111,6 @@ class PlayersEdit extends Component {
                 <Form.Group>
                     <Form.Label>pierna dominante</Form.Label>
                     <Form.Control as="select" type="text" name="dominantLeg" onChange={this.handleInputChange} value={this.state.player.dominantLeg} >
-                        <option></option>
                         <option>derecha</option>
                         <option>izquierda</option>
                         <option>ambas piernas</option>
