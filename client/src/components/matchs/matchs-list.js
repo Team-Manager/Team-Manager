@@ -38,7 +38,7 @@ class MatchsList extends React.Component {
         return (
             <section className="secMatchList">
                 <Container>
-                    <h1>aqui los partidos!!!</h1>
+                    <h1>¡Nuestros partidos!</h1>
 
                     {
                         this.props.loggedInUser && <Button variant="dark" onClick={this.handleShow}>Nuevo partido</Button>

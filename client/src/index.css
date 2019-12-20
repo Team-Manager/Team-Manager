@@ -139,9 +139,12 @@ justify-content: space-between;
 
 }
 .secMatchList{
-  background-image: url("./imagen6.png");
+  background-image: url("./imagen11.png");
      background-repeat: no-repeat;
  background-size: cover;
+  padding:30px;
+ padding: 300px 150px 300px 150px;
+ font-weight: bold;
 }
 
 .Match{
