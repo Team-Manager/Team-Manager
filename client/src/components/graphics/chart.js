@@ -136,7 +136,8 @@ class Chart extends Component {
         return (
             <>
                
-                <section>
+                <section className="player-match">
+                    <h1>Partido</h1>
                     <div>
                         <p>Goles</p>
                         <div id={this.props._id}></div>

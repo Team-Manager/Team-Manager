@@ -46,7 +46,9 @@ class LoginForm extends Component {
 
     render() {
         return (
+            <section className="secIma">
             <Container>
+                <div className="form">
 
                 <h1>Iniciar sesión</h1>
 
@@ -60,7 +62,8 @@ class LoginForm extends Component {
                         <Form.Control type="text" name="password" onChange={this.handleInputChange} value={this.state.password} />
                     </Form.Group>
                     <Button variant="dark" type="submit">Iniciar sesión</Button>
-                </Form>
+                    </Form>
+                </div>
 
                 <Toast
                     onClose={this.handleToastClose}
@@ -80,7 +83,8 @@ class LoginForm extends Component {
                     <Toast.Body>{this.state.toastText}</Toast.Body>
                 </Toast>
 
-            </Container >
+                </Container >
+            </section>
         )
     }
 }

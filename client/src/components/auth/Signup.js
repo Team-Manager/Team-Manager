@@ -32,8 +32,9 @@ class SignupForm extends Component {
 
     render() {
         return (
+            <section className="signPic">
             <Container>
-
+                <div className="form">
                 <h1>Registro</h1>
 
                 <Form onSubmit={this.handleSubmit}>
@@ -46,9 +47,11 @@ class SignupForm extends Component {
                         <Form.Control type="text" name="password" onChange={this.handleInputChange} value={this.state.password} />
                     </Form.Group>
                     <Button variant="dark" type="submit">Registrarme</Button>
-                </Form>
+                    </Form>
+                </div>
 
-            </Container>
+                </Container>
+            </section>
         )
     }
 }

@@ -101,7 +101,7 @@ class PlayersMatch extends Component {
                     <p>Resultado a favor: {this.state.PlayerMatch.goalsLocal}</p>
                     <p>Resultado en contra: {this.state.PlayerMatch.goalsRival}</p>
                     <p>jornada: {this.state.PlayerMatch.season}</p>
-                        <p>Fecha de partido: {this.state.PlayerMatch.date}</p>
+                    <p>Fecha de partido: {this.state.PlayerMatch.date}</p>
                     </div>
 
 

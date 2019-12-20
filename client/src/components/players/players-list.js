@@ -43,7 +43,7 @@ class PlayersList extends React.Component {
 
 
 
-                    <h1>aqui los players!!!</h1>
+                    <h1>¡Jugadores!</h1>
 
 
                     {
