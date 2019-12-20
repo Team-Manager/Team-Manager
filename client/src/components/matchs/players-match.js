@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Col } from 'react-bootstrap'
+import { Button, Form, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 // import Service from '../../service/PlayerMatch.service'
 
@@ -85,45 +85,54 @@ class PlayersMatch extends Component {
 
 
     render() {
-        // console.log(this.state.PlayerMatch)
-        console.log(this.state.PlayerMatch)
+
+
         return this.state.PlayerMatch ? (
-            <>
+                <section className="sec9">
+            <Container>
                 <Link className="btn btn-sm btn-dark" to="/statistics">Ver Estadisticas</Link>
                 <div className="Match">
+
                     <h1>PARTIDO EN DIRECTO</h1>
-
-                    <p>clasificación: {this.state.PlayerMatch.clasification}</p>
-
-                    {this.state.PlayerMatch.players.length !== 0 ?
-
-
-                        this.state.PlayerMatch.players.map(player => {
-
-                            return (
-                                <>
-                                    <p>Nombre: {player.name}</p>
-                                    <p>apellido: {player.lastName}</p>
-                                    <p>Goles: {player.goals}</p>
-                                    <p>Asistencias: {player.assists}</p>
-                                    <p>Minutos Jugados: {player.minutePlays}</p>
-                                    <p>Tarjetas: {player.card}</p>
-                                    <p>Puntuación: {player.rating}</p>
-                                </>
-
-
-                            )
-                        })
-                        : <p>NO TIENES JUGADORES</p>
-
-                    }
+                    <div className="player-match">
                     <p>Clasificación: {this.state.PlayerMatch.clasification}</p>
                     <p>Equipo: {this.state.PlayerMatch.match}</p>
                     <p>Equipo rival: {this.state.PlayerMatch.rival}</p>
                     <p>Resultado a favor: {this.state.PlayerMatch.goalsLocal}</p>
                     <p>Resultado en contra: {this.state.PlayerMatch.goalsRival}</p>
                     <p>jornada: {this.state.PlayerMatch.season}</p>
-                    <p>Fecha de partido: {this.state.PlayerMatch.date}</p>
+                        <p>Fecha de partido: {this.state.PlayerMatch.date}</p>
+                    </div>
+
+
+                    <Row>
+
+                        {this.state.PlayerMatch.players.length !== 0 ?
+
+
+                            this.state.PlayerMatch.players.map(player => {
+
+                                return (
+                                    <Col md={4} className="player-match">
+                                        <h3>{player.name}</h3>
+                                        <p>apellido: {player.lastName}</p>
+                                        <p>Goles: {player.goals}</p>
+                                        <p>Asistencias: {player.assists}</p>
+                                        <p>Minutos Jugados: {player.minutePlays}</p>
+                                        <p>Tarjetas: {player.card}</p>
+                                        <p>Puntuación: {player.rating}</p>
+
+
+                                    </Col>
+
+
+                                )
+                            })
+                            : <p>NO TIENES JUGADORES</p>
+
+                        }
+
+                    </Row>
                 </div>
                 <div>
                     {this.state.PlayerMatch.players.length === 0 ?
@@ -142,7 +151,9 @@ class PlayersMatch extends Component {
                         </>
                         : null}
                 </div>
-            </>
+
+                </Container>
+            </section>
 
 
 

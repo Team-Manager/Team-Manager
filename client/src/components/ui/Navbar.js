@@ -71,7 +71,6 @@ class Navigation extends Component {
                             <Nav.Link as="li"><Link to="/">Inicio</Link></Nav.Link>
                             <Nav.Link as="li"><Link to="/signup">Registro</Link></Nav.Link>
                             <Nav.Link as="li"><Link to="/login">Login</Link></Nav.Link>
-                            
                         </Nav>
                         <Nav className="ml-auto">
                             <Navbar.Text>Bienvenid@ entrenad@r {saludo}</Navbar.Text>

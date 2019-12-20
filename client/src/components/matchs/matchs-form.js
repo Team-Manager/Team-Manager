@@ -16,7 +16,7 @@ class MatchsForm extends Component {
                 goalsLocal: undefined,
                 goalsRival: undefined,
                 season: '',
-                date: undefined,
+
                 players: []
 
             }

@@ -28,20 +28,12 @@ h3{
  
 }
 .footer{
-  z-index: 2;
-    width: 100%;
-    background: #283747;
+    
+    background-color:#343a40;
     color: #fff;
     text-align: center;
-    font-size: .8em;
-    font-weight: 300;
-    padding: 10px 30px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: flex-end;
-    border-top: 1px solid #222;
-    clear: both;
+    font-size: 1em;
+    
 }
 
 .img5{
@@ -119,27 +111,25 @@ justify-content: space-between;
 
 }
 
-.sec2{
-  background-image: url("./imagen3.png");
+.sec3{
+  background-image: url("./imagen10.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 300px 150px 300px 150px;
+  padding: 150px ;
   padding-left: 600px;
+  
 }
-
-.sec3{
-   background-image: url("./imagen4.png");
+.sec9{
+  background-image: url("./imagen9.png");
   background-repeat: no-repeat;
- background-size: cover;
- text-align: start;
- padding:30px;
- padding: 300px 150px 300px 150px;
-
+  background-size: cover;
+  
 }
+
 .secPlayerCard{
    background-image: url("./imagen7.png");
      background-repeat: no-repeat;
- background-size: cover;
+     background-size: cover;
 
 }
 .secChangeCard{
@@ -178,10 +168,10 @@ justify-content: space-between;
   background-image: url("./field2.jpg");
   background-size: cover;
 }
-.Goals{
+/* .Goals{
   display: flex;
   font-weight: bold;
-}
+} */
 .ControlPlayers{
   text-align: center;
   padding-top: 30px;
@@ -190,5 +180,33 @@ justify-content: space-between;
 .Up{
   margin: 20px;
 }
-
-
+.carousel{
+  width: 90%;
+  margin-left: 20%;
+  margin-top:5%;
+}
+.btn-group-sm{
+  margin:10px;
+}
+.player-match{
+  text-align: center;
+  border:1px solid grey;
+  border-radius: 10px;
+  color:black;
+  font-size: 20px;
+}
+.color{
+  color:black;
+  font-size: 30px;
+  font-weight: 500;
+}
+.picCar{
+  opacity: 0.9;
+}
+.titleAlign{
+  text-align: left;
+}
+.Goals{
+  display: flex;
+  /* justify-content: space-between; */
+}

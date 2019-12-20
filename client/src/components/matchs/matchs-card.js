@@ -14,7 +14,7 @@ class MatchsCard extends React.Component {
 
         }
     }
-   
+
 
     handleShow = () => this.setState({ showModalWindow: true })
     handleClose = () => this.setState({ showModalWindow: false })
@@ -22,21 +22,21 @@ class MatchsCard extends React.Component {
 
         return (
             <Col className="match-card">
-                
-                
+
+
                 <p>Clasificación: {this.props.clasification}</p>
                 <p>Equipo: {this.props.match}</p>
                 <p>Equipo Rival: {this.props.rival}</p>
                 <p>Resultado a Favor: {this.props.goalsLocal}</p>
                 <p>Resultado en Contra: {this.props.goalsRival}</p>
                 <p>Jornada: {this.props.season}</p>
-                <p>Fecha Del Partido: {this.props.date}</p>
+
                 <br></br>
                 <div>
-                <Button className="Buttons" variant="dark" onClick={this.handleShow}>Editar partido</Button>    
-                <Button className="Buttons" variant="dark" onClick={() => this.props.deleteMatch(this.props._id)}>Eliminar partido</Button>
+                    <Button className="Buttons" variant="dark" onClick={this.handleShow}>Editar partido</Button>
+                    <Button className="Buttons" variant="dark" onClick={() => this.props.deleteMatch(this.props._id)}>Eliminar partido</Button>
                 </div>
-               
+
 
                 <Modal show={this.state.showModalWindow} onHide={this.handleClose}>
                     <Modal.Header closeButton>

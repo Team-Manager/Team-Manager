@@ -1,8 +1,11 @@
 import React from 'react'
-import { Container, Row , } from 'react-bootstrap'
+import { Container, Row, Carousel } from 'react-bootstrap'
 import Calendar from "../calendar/calendar"
 import { Link } from 'react-router-dom'
 
+import entrenador from '../../Entrenador.jpg'
+import abrazo from '../../abrazo.jpg'
+import niños from '../../niños.jpeg'
 
 const Index = () => {
 
@@ -14,29 +17,57 @@ const Index = () => {
                 <p>"TU TRIUNFO SERÁ EL MIO"</p>
                 <Link className="btn btn-sm btn-dark" to="/match">Día De Partido</Link>
                 <Calendar></Calendar>
-            
+
             </section >
-            <section className="sec2">
-                <h2 className="Up">Todo lo que necesitas para ser un gran entrenador</h2>
-                <ul>
-                    
-                    <li><h3>Registra a tu equipo</h3></li>
-                    <li><h3>Crea tus propias alineaciones</h3></li>
-                    <li><h3>Obten las mejores estadisticas</h3></li>
-                    <li><h3>Registra tus entrenamientos y partidos</h3></li>
-                        
-                </ul>
-            </section>
+
             <section className="sec3">
-                <h3></h3>
-                <p>lorem borja ipsum lorem bipsm borja borji borjita bor borjinho bor ipsum</p>
+
+                <div >
+                    <Carousel>
+                        <Carousel.Item>
+                            <img className="d-block w-100 picCar" src={entrenador} alt="First slide" />
+
+                            <Carousel.Caption className="color">
+                                <h3>Registra a tu equipo en Manager App!</h3>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img className="d-block w-100 picCar" src={abrazo} alt="Second slide" />
+
+                            <Carousel.Caption className="color">
+                                <h3>Crea Tu Propia Alineación</h3>
+                                
+                            </Carousel.Caption >
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img className="d-block w-100 picCar" src={niños} alt="First slide" />
+
+                            <Carousel.Caption className="color">
+                                <h3>Obten estadistiscas de tus jugadores!</h3>
+                                
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    </Carousel>
+                </div>
             </section>
-            {/* <footer className ="footer">
-                <p> Imanol</p>
-                <p> Borja</p>
+
+
+
+            <footer className="footer">
+                <div>
+                    <h2 className="titleAlign">ManagerApp!</h2>
+                </div>
+                <p>Imanol Bernardino</p>
+                <p> Borja Valdes</p>
+                <p>Contact information: <a href="mailto:manager@app.com">
+                    manager@app.com</a>.</p>
+
+
             </footer>
-        */}
-</>
+
+
+
+        </>
 
     )
 
