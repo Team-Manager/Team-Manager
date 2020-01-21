@@ -48,10 +48,6 @@ class PlayersMatch extends Component {
 
 
     handleCheckBox = (checked, playerID) => {
-        // e.preventDefault()
-        console.log("ENTRAAAs")
-        console.log(checked)
-        console.log(playerID)
         const copyTeamPlayer = [...this.state.teamPlayers]
         if (checked) {
             copyTeamPlayer.push(playerID)
@@ -80,7 +76,6 @@ class PlayersMatch extends Component {
 
             })
             .catch(err => console.log(err))
-        //enviar al back el ID del partido que estamos configurando y el state- 
     }
 
 

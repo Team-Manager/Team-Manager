@@ -3,7 +3,6 @@ import Col from 'react-bootstrap/Col'
 import { Button, Form, Modal } from 'react-bootstrap'
 import MatchsEdit from '../matchs/match-edit'
 
-// import { Link } from 'react-router-dom'
 
 class MatchsCard extends React.Component {
     constructor(props) {
@@ -44,7 +43,6 @@ class MatchsCard extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         <MatchsEdit match={this.props} updateMatchsList={this.props.updateMatchsList} closeModalWindow={this.handleClose} />
-                        {/* <deletePlayerplayer={this.props} updatePlayersList={this.props.updatePlayersList} closeModalWindow={this.handleClose} /> */}
                     </Modal.Body>
                 </Modal>
 

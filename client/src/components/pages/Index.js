@@ -18,7 +18,7 @@ const Index = () => {
                 <Link className="btn btn-sm btn-dark" to="/match">Día De Partido</Link>
                 <Calendar></Calendar>
 
-            </section >
+            </section>
 
             <section className="sec3">
 

@@ -1,17 +1,13 @@
 import React, { Component } from 'react'
 import { Button, Form } from 'react-bootstrap'
-
 import MatchsService from '../../service/Match.service'
-// import FilesService from '../../service/Files.service'
 
 class MatchsEdit extends Component {
     constructor(props) {
         super(props)
         this._service = new MatchsService()
-        // // this._filesService = new FilesService()
         this.state = {
             buttonText: 'editar partido',
-            // buttonText: 'eliminar jugador',
             match: {
 
                 goalsTotal: this.props.match.goalsTotal,

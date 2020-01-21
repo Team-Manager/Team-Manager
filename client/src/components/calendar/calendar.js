@@ -7,7 +7,6 @@ export default class Calendar extends Component {
     constructor() {
         super()
         this.state = {
-            // dt: new Date()
             calendarArray: [
                 " ", " ", " ", " ", " ", " ", " ",
                 " ", " ", " ", " ", " ", " ", " ",
@@ -28,17 +27,13 @@ export default class Calendar extends Component {
 
     componentDidMount() {
         this.renderDate()
-        
-     //invocar el metodo creado.
-        // this.getAllPlayers()
+    
     }
-    // MEtodo para traer de la base de datos todos los partidos. 
-    //Get All players
+    // method to brink from de database alltheplayers
     getAllPlayers = () => this._service.get('/getAllPlayers')
 
     renderDate = () => {
         this.dt.setDate(1);
-        // this.dt.setDate(13)
         const firstDay = this.dt.toDateString().slice(0, 3)
 
         const weekDay = this.daysOfweek.indexOf(firstDay)

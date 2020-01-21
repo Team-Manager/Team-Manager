@@ -1,21 +1,3 @@
-// let chart = am4core.create("assets-chart", am4charts.PieChart);
-// chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-// chart.responsive.enabled = true;
-// chart.radius = am4core.percent(70);
-// chart.innerRadius = am4core.percent(40);
-// chart.startAngle = 180;
-// chart.endAngle = 360;
-// let series = chart.series.push(new am4charts.PieSeries());
-// series.dataFields.value = "amount";
-// series.dataFields.category = "investment";
-// chart.data = this.state.matches
-// series.slices.template.cornerRadius = 10;
-// series.slices.template.innerCornerRadius = 7;
-// series.slices.template.draggable = true;
-// series.slices.template.inert = true;
-// series.hiddenState.properties.startAngle = 90;
-// series.hiddenState.properties.endAngle = 90;
-// chart.legend = new am4charts.Legend();
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
@@ -63,14 +45,13 @@ class Chart extends Component {
         if (this.props.players.length !== 0) {
             copyPerformances.map((el, idx) => {
                 if (el.performance) {
-                    console.log(el.player.name)
 
                     playersPerformances.push({ "goals": el.performance.goals, "name": el.player.name })
                 }
             })
 
             copyMinutes.map((elm, idx) => {
-                // console.log(elm)
+               
                 if (elm.performance) {
                     console.log(elm.player.name)
 
@@ -100,7 +81,6 @@ class Chart extends Component {
         series2.dataFields.category = "name"
         series3.dataFields.category = "name"
 
-        // console.log(copyArray)
 
 
         this.setState({ playersPerformances: playersPerformances, playersMinutes: playersMinutes, playersAssists: playersAssists }, () => this.startChart(chart, chart2, chart3))
@@ -109,17 +89,11 @@ class Chart extends Component {
     }
 
     startChart = (chart, chart2, chart3) => {
-        // console.log(this.props)
-        // console.log(this.state.newObject)
-        console.log(this.state.playersAssists)
-        // console.log(this.state.playersPerformances)
 
         chart.data = this.state.playersPerformances
         chart2.data = this.state.playersMinutes
         chart3.data = this.state.playersAssists
-        // console.log(newObject)
-
-
+    
     }
 
 
@@ -132,7 +106,6 @@ class Chart extends Component {
         console.log(this.props)
 
 
-        // console.log(this.props)
         return (
             <>
                

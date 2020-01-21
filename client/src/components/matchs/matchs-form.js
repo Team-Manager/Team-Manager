@@ -45,7 +45,7 @@ class MatchsForm extends Component {
     render() {
 
         return (
-            // FORMULARIO PARA EL JUGADOR
+            // FORM FOR THE PLAYER
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group>
                     <Form.Label>Clasificación</Form.Label>

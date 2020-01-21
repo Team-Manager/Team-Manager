@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Col, Modal, Button, Form } from 'react-bootstrap'
 import PlayersService from '../../service/Players.service'
 
-//EDITAR ESTA PARTE
-
 class MatchPlayers extends Component {
     constructor(props) {
         super(props)
@@ -17,7 +15,6 @@ class MatchPlayers extends Component {
                 minutePlays: undefined,
                 cards: "",
                 rating: undefined,
-                // titular: "",
             }
 
 

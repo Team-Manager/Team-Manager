@@ -7,7 +7,6 @@ export default class Services {
             withCredentials: true   // RUTAS PERSISTENTES
         })
     }
-    // getOneMatch = () => this._service.get('/getOneMatch')
     getOneMatch = id => {
         console.log(id)
         return this._service.get(`/matchs/playersMatch/${id}`)
