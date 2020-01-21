@@ -47,6 +47,14 @@ class MatchsForm extends Component {
         return (
             // FORM FOR THE PLAYER
             <Form onSubmit={this.handleSubmit}>
+<<<<<<< HEAD
+=======
+                {/* <Form.Group>
+                    <Form.Label>Goles</Form.Label>
+                    <Form.Control type="number" name="goals" onChange={this.handleInputChange} value={this.state.match.goals} />
+                </Form.Group> */}
+
+>>>>>>> ad233d43042ae1c596775f0fedd72b6553453a1e
                 <Form.Group>
                     <Form.Label>Clasificación</Form.Label>
                     <Form.Control type="number" name="clasification" onChange={this.handleInputChange} value={this.state.match.clasification} />

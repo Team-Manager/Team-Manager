@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Col, Modal, Button, Form } from 'react-bootstrap'
-import PlayersService from '../../service/Players.service'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+
 
 class MatchPlayers extends Component {
     constructor(props) {
         super(props)
-        this._service = new PlayersService()
         this.state = {
+<<<<<<< HEAD
             showModalWindow: false,
             player:
             {
@@ -18,15 +18,14 @@ class MatchPlayers extends Component {
             }
 
 
+=======
+            checked: false
+>>>>>>> ad233d43042ae1c596775f0fedd72b6553453a1e
         }
 
-    }
 
 
-
-
-    handleSubmit = e => {
-
+<<<<<<< HEAD
         e.preventDefault()
 
         this._service
@@ -48,12 +47,10 @@ class MatchPlayers extends Component {
         this.setState({
             player: { ...this.state.player, [name]: value }
         })
+=======
+
+>>>>>>> ad233d43042ae1c596775f0fedd72b6553453a1e
     }
-
-
-
-    handleShow = () => this.setState({ showModalWindow: true })
-    handleClose = () => this.setState({ showModalWindow: false })
 
 
 
@@ -64,6 +61,7 @@ class MatchPlayers extends Component {
 
 
 
+<<<<<<< HEAD
             <>
                 <Col className="PlayerCard" md={2} >
 
@@ -120,11 +118,34 @@ class MatchPlayers extends Component {
                     </Modal.Body>
                 </Modal>
             </>
+=======
+            <Col className="PlayerCard" md={2} >
+>>>>>>> ad233d43042ae1c596775f0fedd72b6553453a1e
+
+                <p><strong>Nombre: </strong>{this.props.name}</p>
+                <p><strong>Apellido:</strong>{this.props.lastName}</p>
+                <p><strong>Goles: </strong> {this.props.goals}</p>
+                <p><strong>Asistencias: </strong> {this.props.assists}</p>
+                <p><strong>Minutos Jugados: </strong> {this.props.minutePlays}</p>
+                <p><strong>Tarjetas: </strong> {this.props.cards}</p>
+                <p><strong>Puntuación: </strong> {this.props.rating}</p>
+                <div>
+                    {/* <InputGroup className="mb-3">
+                        <p><strong>Añadir al partido: </strong></p>
+                    <InputGroup.Checkbox aria-label={this.props.titular} /> */}
+                    {/* <div>
+                        <Button className="ButtonsMatch" variant="dark" onClick={this.handleShow}>Editar jugador</Button>
+                    </div>     */}
+                    <Form.Group controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="titular" value={this.state.checked} name={this.props._id} onChange={(e) => this.props.handleCheckBox(e.target.checked, this.props._id)} />
+                    </Form.Group>
 
 
+                    {/* <input type="checkbox" label="titular" value={this.props.checked} name={this.props.name} onChange={this.handleCheckBox}></input> */}
 
+                </div>
 
-
+            </Col>
 
         )
     }

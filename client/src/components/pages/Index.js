@@ -17,7 +17,21 @@ const Index = () => {
                 <p>"TU TRIUNFO SERÁ EL MIO"</p>
                 <Link className="btn btn-sm btn-dark" to="/match">Día De Partido</Link>
                 <Calendar></Calendar>
+<<<<<<< HEAD
 
+=======
+            
+            </section >
+            <section class="sec2">
+            <h2>Crea tu propia alineación
+            </h2>
+            <p>Como en las grandes batallas, a veces no gana el mejor, 
+              sino el que está más convencido</p>
+                <p>No tengas miedo a fallar, ten miedo 
+              a no intentarlo</p>
+                <p>Cada temporada es un nuevo reto para mejorar en términos de partidos, goles
+              y asistencias</p>
+>>>>>>> ad233d43042ae1c596775f0fedd72b6553453a1e
             </section>
 
             <section className="sec3">

@@ -45,6 +45,7 @@ router.get("/delete/:id", (req, res) => {
         .catch(err => console.log(err));
 });
 
+<<<<<<< HEAD
 router.post("/addToMatch", (req, res) => {
     const { goals, assists, minutePlays, cards, rating } = req.body.player
     
@@ -65,6 +66,8 @@ router.post("/addToMatch", (req, res) => {
         .catch(err => console.log('error!!', err))
 
 })
+=======
+>>>>>>> ad233d43042ae1c596775f0fedd72b6553453a1e
 
 
 

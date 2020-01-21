@@ -86,12 +86,21 @@ Col{
 .Buttons{
 display: flex;
 margin:3%;
+<<<<<<< HEAD
 justify-content: space-between;
+=======
+background-color:white;
+>>>>>>> ad233d43042ae1c596775f0fedd72b6553453a1e
 }
 .ButtonsPl{
    display:flex;
 }
+.ButtonsMatch{
 
+
+
+
+}
 
 .match-card{
    white-space: nowrap;
